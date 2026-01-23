@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Smooch Sans', sans-serif;
+  background: #1a0000;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 2rem;
+  background: linear-gradient(135deg, #450000 10%, #8B0000 80%);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  /*position: sticky;*/
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid #D4AF37;
+}
+
+.logo {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #E6B87A 10%, #B76E79 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.logo span {
+  color: #D4AF37;
+  font-size: 1.5rem;
+  vertical-align: super;
+  margin-left: 4px;
+}
+
+.header-right {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.profile-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #D4AF37;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  padding: 10px;
+}
+
+.profile-icon svg {
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.profile-icon:hover {
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+}
+
+.Background {
+  background-image: 
+    linear-gradient(0deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.6) 100%), 
+    url("https://forever.travel-assets.com/flex/flexmanager/images/2025/08/21/PD2_HCOM_hero_cr2.avif?impolicy=fcrop&w=1920&h=600&q=medium");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 370px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem;
+  margin-bottom: 2rem;
+}
