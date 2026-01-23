@@ -96,4 +96,89 @@ header {
   align-items: flex-end;
   padding: 3rem;
   margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Search {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgba(26, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin: 3rem auto;
+  max-width: 1000px;
+  border: 1px solid #D4AF37;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  gap: 1.5rem;
+}
+
+.Slot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.25rem 1.5rem;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: grey;
+  min-width: 250px;
+  background: linear-gradient(135deg, rgba(61, 12, 2, 0.6) 0%, rgba(139, 0, 0, 0.4) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.Slot:hover {
+  border-color: #D4AF37;
+  background: linear-gradient(135deg, rgba(61, 12, 2, 0.8) 0%, rgba(139, 0, 0, 0.6) 100%);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+.mini_logo {
+  width: 15px;
+  height: 15px;
+}
+
+.Slot > div:first-of-type {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f8f4e6;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #E6B87A 0%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.Slot > div:nth-of-type(2) {
+  font-size: 1rem;
+  color: #d4b4b4;
+  font-style: italic;
+  margin-top: -0.7rem;
+  margin-left: 0.5rem;
+}
+
+.Slot img {
+  margin-right: 1rem;
+  margin-left: -0.5rem;
 }

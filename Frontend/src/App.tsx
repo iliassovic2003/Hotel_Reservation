@@ -17,9 +17,31 @@ function App() {
         </div>
       </header>
       <main>
-        <div className="Background"></div>
-        <div className="Search">
-          
+        <div className="Background">
+          <div className="Search">
+            <a className="Slot">
+              <div>
+                <img className="mini_logo" src="./src/assets/icons/location.svg"/>
+                Where are you going ?
+              </div>
+              <div>HERE_OUTPUT_FUNC</div>
+            </a>
+            <a className="Slot">
+              <div>
+                <img className="mini_logo" src="./src/assets/icons/calendar.svg"/>
+                Dates
+              </div>
+              <div>HERE_OUTPUT_FUNC</div>
+            </a>
+            <a className="Slot">
+              <div>
+                <img className="mini_logo" src="./src/assets/icons/person.svg"/>
+                Travellers
+              </div>
+              <div>HERE_OUTPUT_FUNC</div>
+            </a>
+            <button>Search</button>
+          </div>
         </div>
       </main>
       <footer></footer>

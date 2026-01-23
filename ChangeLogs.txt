@@ -4,3 +4,10 @@ v0.0 => v0.1
       -  Added Header Structure & Styles.
     Minor Updates:
       -  Added Backend Readme File.
+
+v0.1 => v0.2
+    Major Updates:
+      -  UI For Searching.
+    Minor Updates:
+      -  Added Icons to use in the search bar.
+      -  Deleted NodeModules since you can install it any time.
