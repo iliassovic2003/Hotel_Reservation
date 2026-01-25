@@ -11,3 +11,7 @@ v0.1 => v0.2
     Minor Updates:
       -  Added Icons to use in the search bar.
       -  Deleted NodeModules since you can install it any time.
+
+v0.2 => v0.3
+    Minor Updates:
+      -  Added Animated First Phrase (Prototype).

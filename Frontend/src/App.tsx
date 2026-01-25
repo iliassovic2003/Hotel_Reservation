@@ -1,6 +1,35 @@
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
+  const countries = [
+    'Paris',
+    'Tokyo',
+    'Bali',
+    'Dubai',
+    'Santorini',
+    'Maldives',
+    'New York',
+    'Barcelona',
+    'Iceland',
+    'Morocco'
+  ]
+  
+  const [currentCountry, setCurrentCountry] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true)
+      setTimeout(() => {
+        setCurrentCountry((prev) => (prev + 1) % countries.length)
+        setIsAnimating(false)
+      }, 500)
+    }, 3500)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <>
       <header>
@@ -18,6 +47,12 @@ function App() {
       </header>
       <main>
         <div className="Background">
+          <section className="hero-message">
+              <div className="hero-text">
+                  Your next journey starts in 
+                  <span className={`rotating-word ${isAnimating ? 'fade-out' : 'fade-in'}`}>{countries[currentCountry]}</span>
+              </div>
+          </section>
           <div className="Search">
             <a className="Slot">
               <div>
