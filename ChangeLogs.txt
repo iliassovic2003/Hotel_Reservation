@@ -14,4 +14,8 @@ v0.1 => v0.2
 
 v0.2 => v0.3
     Minor Updates:
-      -  Added Animated First Phrase (Prototype).
+      -  Added Animated First Sentence (Prototype).
+
+v0.3 => v0.4
+    Major Updates:
+      -  Added Docker-compose to setup empty Postgre Database.
