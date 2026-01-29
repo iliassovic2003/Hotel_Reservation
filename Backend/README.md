@@ -1,120 +1,110 @@
 ## 📁 Backend Structure
 
 ```
-hotel-booking-backend/
-├── src/
-│   └── java/
-│       └── hotelbooking/
-│           │
-│           ├── HotelBookingApplication.java
-│           │
-│           ├── config/
-│           │   ├── SecurityConfig.java
-│           │   ├── JwtConfig.java
-│           │   ├── CorsConfig.java
-│           │   ├── WebConfig.java
-│           │   └── OpenApiConfig.java
-│           │
-│           ├── controller/
-│           │   ├── AuthController.java
-│           │   ├── UserController.java
-│           │   ├── HotelController.java
-│           │   ├── RoomController.java
-│           │   └── BookingController.java
-│           │
-│           ├── service/
-│           │   ├── AuthService.java
-│           │   ├── UserService.java
-│           │   ├── HotelService.java
-│           │   ├── RoomService.java
-│           │   ├── BookingService.java
-│           │   └── EmailService.java
-│           │
-│           ├── repository/
-│           │   ├── UserRepository.java
-│           │   ├── HotelRepository.java
-│           │   ├── RoomRepository.java
-│           │   └── BookingRepository.java
-│           │
-│           ├── entity/
-│           │   ├── User.java
-│           │   ├── Hotel.java
-│           │   ├── Room.java
-│           │   ├── Booking.java
-│           │   ├── Review.java
-│           │   └── enums/
-│           │       ├── Role.java
-│           │       ├── BookingStatus.java
-│           │       └── RoomType.java
-│           │
-│           ├── dto/
-│           │   ├── request/
-│           │   │   ├── LoginRequest.java
-│           │   │   ├── RegisterRequest.java
-│           │   │   ├── CreateHotelRequest.java
-│           │   │   ├── UpdateHotelRequest.java
-│           │   │   ├── CreateRoomRequest.java
-│           │   │   ├── CreateBookingRequest.java
-│           │   │   └── SearchRequest.java
-│           │   │
-│           │   └── response/
-│           │       ├── AuthResponse.java
-│           │       ├── UserResponse.java
-│           │       ├── HotelResponse.java
-│           │       ├── RoomResponse.java
-│           │       ├── BookingResponse.java
-│           │       ├── ApiResponse.java
-│           │       └── PageResponse.java
-│           │
-│           ├── mapper/
-│           │   ├── UserMapper.java
-│           │   ├── HotelMapper.java
-│           │   ├── RoomMapper.java
-│           │   └── BookingMapper.java
-│           │
-│           ├── security/
-│           │   ├── JwtAuthenticationFilter.java
-│           │   ├── JwtTokenProvider.java
-│           │   ├── CustomUserDetailsService.java
-│           │   └── SecurityUtils.java
-│           │
-│           ├── exception/
-│           │   ├── GlobalExceptionHandler.java
-│           │   ├── ResourceNotFoundException.java
-│           │   ├── BadRequestException.java
-│           │   ├── UnauthorizedException.java
-│           │   ├── BookingConflictException.java
-│           │   └── ErrorResponse.java
-│           │
-│           ├── validation/
-│           │   ├── validator/
-│           │   │   ├── DateRangeValidator.java
-│           │   │   └── PhoneNumberValidator.java
-│           │   └── annotation/
-│           │       ├── ValidDateRange.java
-│           │       └── ValidPhoneNumber.java
-│           │
-│           └── util/
-│               ├── DateUtils.java
-│               └── Constants.java
-│
-├── resources/
-│   ├── application.yml
-│   ├── application-dev.yml
-│   ├── application-prod.yml
-│   ├── db/
-│   │   └── migration/
-│   │       ├── V1__create_users_table.sql
-│   │       ├── V2__create_hotels_table.sql
-│   │       ├── V3__create_rooms_table.sql
-│   │       └── V4__create_bookings_table.sql
-│   └── static/
-│       └── images/
-│
-├── .gitignore
-├── README.md
+├── docker-compose.yml
 ├── pom.xml
-└── docker-compose.yml
+├── README.md
+├── src
+│   ├── java
+│   │   └── hotelbooking
+│   │       ├── config
+│   │       │   ├── CorsConfig.java
+│   │       │   ├── JwtConfig.java
+│   │       │   ├── OpenApiConfig.java
+│   │       │   ├── SecurityConfig.java
+│   │       │   └── WebConfig.java
+│   │       ├── controller
+│   │       │   ├── AuthController.java
+│   │       │   ├── BookingController.java
+│   │       │   ├── HotelController.java
+│   │       │   ├── RoomController.java
+│   │       │   └── UserController.java
+│   │       ├── dto
+│   │       │   ├── request
+│   │       │   │   ├── CreateBookingRequest.java
+│   │       │   │   ├── CreateHotelRequest.java
+│   │       │   │   ├── CreateRoomRequest.java
+│   │       │   │   ├── LoginRequest.java
+│   │       │   │   ├── RegisterRequest.java
+│   │       │   │   ├── SearchRequest.java
+│   │       │   │   └── UpdateHotelRequest.java
+│   │       │   └── response
+│   │       │       ├── ApiResponse.java
+│   │       │       ├── AuthResponse.java
+│   │       │       ├── BookingResponse.java
+│   │       │       ├── HotelResponse.java
+│   │       │       ├── PageResponse.java
+│   │       │       ├── RoomResponse.java
+│   │       │       └── UserResponse.java
+│   │       ├── entity
+│   │       │   ├── Booking.java
+│   │       │   ├── enums
+│   │       │   │   ├── BookingStatus.java
+│   │       │   │   ├── Role.java
+│   │       │   │   └── RoomType.java
+│   │       │   ├── Hotel.java
+│   │       │   ├── Review.java
+│   │       │   ├── Room.java
+│   │       │   └── User.java
+│   │       ├── exception
+│   │       │   ├── BadRequestException.java
+│   │       │   ├── BookingConflictException.java
+│   │       │   ├── ErrorResponse.java
+│   │       │   ├── GlobalExceptionHandler.java
+│   │       │   ├── ResourceNotFoundException.java
+│   │       │   └── UnauthorizedException.java
+│   │       ├── mapper
+│   │       │   ├── BookingMapper.java
+│   │       │   ├── HotelMapper.java
+│   │       │   ├── RoomMapper.java
+│   │       │   └── UserMapper.java
+│   │       ├── repository
+│   │       │   ├── BookingRepository.java
+│   │       │   ├── HotelRepository.java
+│   │       │   ├── RoomRepository.java
+│   │       │   └── UserRepository.java
+│   │       ├── security
+│   │       │   ├── CustomUserDetailsService.java
+│   │       │   ├── JwtAuthenticationFilter.java
+│   │       │   ├── JwtTokenProvider.java
+│   │       │   └── SecurityUtils.java
+│   │       ├── service
+│   │       │   ├── AuthService.java
+│   │       │   ├── BookingService.java
+│   │       │   ├── EmailService.java
+│   │       │   ├── HotelService.java
+│   │       │   ├── RoomService.java
+│   │       │   └── UserService.java
+│   │       ├── util
+│   │       │   ├── Constants.java
+│   │       │   └── DateUtils.java
+│   │       └── validation
+│   │           ├── annotation
+│   │           │   ├── ValidDateRange.java
+│   │           │   └── ValidPhoneNumber.java
+│   │           └── validator
+│   │               ├── DateRangeValidator.java
+│   │               └── PhoneNumberValidator.java
+│   └── resources
+│       ├── application-dev.yml
+│       ├── application-prod.yml
+│       ├── application.yml
+│       ├── db
+│       │   ├── migration
+│       │   │   ├── V1__create_users_table.sql
+│       │   │   ├── V2__create_company_table.sql
+│       │   │   ├── V3__create_hotels_table.sql
+│       │   │   ├── V4__create_owner_table.sql
+│       │   │   ├── V5__create_rooms_table.sql
+│       │   │   ├── V6__create_customer_table.sql
+│       │   │   ├── V7__create_reservation_table.sql
+│       │   │   └── V8__add_foreign_keys_and_indexes.sql
+│       │   └── schema
+│       │       └── V1__db_design.png
+│       └── static
+│           └── images
+└── upload
+
 ```
 
 ### 🏗️ Main Application Structure
@@ -282,13 +272,17 @@ hotel-booking-backend/
 ### Database Migrations:
 
 **db/migration/**
-- V1__create_users_table.sql
-- V2__create_hotels_table.sql
-- V3__create_rooms_table.sql
-- V4__create_bookings_table.sql
+├── V1__create_users_table.sql
+├── V2__create_company_table.sql
+├── V3__create_hotels_table.sql
+├── V4__create_owner_table.sql
+├── V5__create_rooms_table.sql
+├── V6__create_customer_table.sql
+├── V7__create_reservation_table.sql
+└── V8__add_foreign_keys_and_indexes.sql
 
-Flyway automatically runs these in order on startup.
-
+### Database Schema
+![Hotel Booking Architecture](src/resources/db/schema/V1__db_design.png)
 ---
 
 ## 🎯 Quick Reference: File Counts
