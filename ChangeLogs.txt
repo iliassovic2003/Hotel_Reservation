@@ -19,3 +19,19 @@ v0.2 => v0.3
 v0.3 => v0.4
     Major Updates:
       -  Added Docker-compose to setup empty Postgre Database.
+
+v0.4 => v0.5
+    Major Updates:
+      -  Designing and creating Database Tables.
+    Minor Updates:
+      -  Added upload directory for further updates.
+      -  Added Database schema and its respective directory.
+
+v0.5 => v0.6
+    Major Updates:
+      -  Fully Designing and creating SignUp page.
+      -  Fully Designing and creating Login page.
+    Minor Updates:
+      -  Added Error logic to prevent unecessary transmission front-back.
+      -  Added Dynamic theme in the background.
+      -  Added necessary Icons to use in the login/signup pages.

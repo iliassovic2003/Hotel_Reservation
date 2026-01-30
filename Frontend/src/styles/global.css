@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Smooch Sans', sans-serif;
+  background: #1a0000;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+/* Add header styles here too since it's global */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 2rem;
+  background: linear-gradient(135deg, #450000 10%, #8B0000 80%);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid #D4AF37;
+}
+
+.logo {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #E6B87A 10%, #B76E79 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.logo span {
+  color: #D4AF37;
+  font-size: 1.5rem;
+  vertical-align: super;
+  margin-left: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+

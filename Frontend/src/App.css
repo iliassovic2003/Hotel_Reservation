@@ -109,15 +109,22 @@ header {
   text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
-.rotating-word {
-  color: #D4AF37;
-  font-weight: 600;
-  background: linear-gradient(135deg, #E6B87A 0%, #D4AF37 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  min-width: 200px;
-  position: relative;
+.rotating-text-main {
+  padding: 8px 12px;
+  color: black;
+  overflow: hidden;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.rotating-text-split {
+  overflow: hidden;
+  padding-bottom: 4px;
 }
 
 .Background {
