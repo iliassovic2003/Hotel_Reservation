@@ -14,7 +14,6 @@ function App() {
           <Route path="/register" element={<Register />} />
           {/* Add other routes later */}
         </Routes>
-        {/* Footer would go here */}
       </div>
     </Router>
   );

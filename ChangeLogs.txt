@@ -35,3 +35,21 @@ v0.5 => v0.6
       -  Added Error logic to prevent unecessary transmission front-back.
       -  Added Dynamic theme in the background.
       -  Added necessary Icons to use in the login/signup pages.
+
+v0.6 => v0.7
+    Major Updates:
+      -  Added Server-Side Maven to Receive Requests.
+      -  Added Working Functionnal Login/SignUp Page.
+      -  Modified the Project Architecture.
+      -  Added 3 Security Files That Will be Used in Future Updates.
+    Minor Updates:
+      -  Added Functionnal RememberMe Logic.
+      -  Added 4 Exceptions Files.
+      -  Added Files Needed for Auth.
+      -  Added Maven Dependencies.
+      -  Added JWT Token Functions That Will be Used in Future Updates.
+      -  Added Parametres in Application.yml (mail system still isn't implemented).
+      -  Modified the Ports in Docker-Compose File.
+      -  Modified the Front-end Login/SignUp Pages to Send and Receive.
+      -  Modified Readme File.
+

@@ -1,7 +1,7 @@
 import '../styles/global.css';
 import LiquidEther from '../components/animations/LiquidEther';
 import styles from './Register.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const Register = () => {
@@ -13,6 +13,8 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [password2, setPassword2] = useState('');
     const [passwordErrors, setPasswordErrors] = useState<string[]>([]);
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     const validateEmail = (email: string): string => {
       if (!email)
@@ -65,20 +67,58 @@ const Register = () => {
                     email.trim() !== '' && password.trim() !== '' && 
                     password2.trim() !== '';
 
-    const handleSubmit = (e: React.FormEvent) => {
-      e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!isFormValid) {
+      alert("Please Fill With Valid Values.");
+      return;
+    }
+
+    setLoading(true);
+    
+    try {
+      const response = await fetch('http://localhost:8080/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fname: fname,
+          lname: lname,
+          email: email,
+          password: password,
+          password2: password2
+        })
+      });
       
-      if (!isFormValid) {
-          alert("Please fix all errors before submitting");
-          return;
+      const data = await response.json();
+      
+      if (!response.ok)
+      {
+        if (response.status === 401)
+          throw new Error('Invalid Information');
+        else if (response.status === 400)
+          throw new Error(data.message || 'Invalid request');
+        else
+          throw new Error(data.message || `Register failed (${response.status})`);
       }
       
-      console.log('Registration data:', {
-          fname,
-          lname,
-          email,
-          password
-      });
+      console.log('Register successful:', data);
+      
+      alert('Register successful!');
+      
+      if (data.role === 'ADMIN')
+        navigate('/admin/dashboard');
+      else
+        navigate('/');
+      
+    } catch (error) {
+        console.error('Register error:', error);
+        alert(error instanceof Error ? error.message : 'Login failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
     return (

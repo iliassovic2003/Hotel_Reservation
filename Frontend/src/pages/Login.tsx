@@ -1,7 +1,7 @@
 import '../styles/global.css';
 import LiquidEther from '../components/animations/LiquidEther';
 import styles from './Login.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const Login = () => {
@@ -10,6 +10,8 @@ const Login = () => {
   const [emailError, setEmailError] = useState('');
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const validateEmail = (email: string): string => {
     if (!email)
@@ -46,14 +48,67 @@ const Login = () => {
   const isFormValid = isEmailValid && isPasswordValid && 
                       email.trim() !== '' && password.trim() !== '';
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!isFormValid) {
       alert("Please enter your email and password");
       return;
     }
-    console.log('Logging in with:', { email, password, rememberMe });
+
+    setLoading(true);
+    
+    try {
+      const response = await fetch('http://localhost:8080/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password
+          // place for remember me
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok)
+      {
+        if (response.status === 401)
+          throw new Error('Invalid email or password');
+        else if (response.status === 400)
+          throw new Error(data.message || 'Invalid request');
+        else
+          throw new Error(data.message || `Login failed (${response.status})`);
+      }
+      
+      console.log('Login successful:', data);
+      
+      if (data.token) {
+          const storage = rememberMe ? localStorage : sessionStorage;
+          storage.setItem('token', data.token);
+          storage.setItem('user', JSON.stringify({
+            userId: data.userId,
+            email: data.email,
+            firstName: data.firstName,
+            lastName: data.lastName,
+            role: data.role
+          }));
+        }
+      alert('Login successful!');
+      
+      if (data.role === 'ADMIN')
+        navigate('/admin/dashboard');
+      else
+        navigate('/');
+      
+    } catch (error) {
+        console.error('Login error:', error);
+        alert(error instanceof Error ? error.message : 'Login failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
