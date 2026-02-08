@@ -53,3 +53,14 @@ v0.6 => v0.7
       -  Modified the Front-end Login/SignUp Pages to Send and Receive.
       -  Modified Readme File.
 
+v0.7 => v0.8
+    Major Updates:
+      -  Added Automatized Makefile. (inctruction will be made in future)
+      -  Added Another Endpoint to Handle Email-Verification.
+      -  Added Pages to Handle Fail/Success Verification.
+      -  Added Template Mail for Email-Verification.
+    Minor Updates:
+      -  Added Another Exception to use.
+      -  Added Template Mail for Password-Reset. (Future Planned)
+      -  You can no Longer Login With Unverified Email's Account.
+      -  Added More More Logs.

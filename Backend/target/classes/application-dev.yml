@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5555/hotelbooking
+    username: admin
+    password: password123
+  
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: iliaszahr.professional@gmail.com
+    password: ${MAIL_PASSWORD:}
+    test-connection: true
+
+# Development-specific settings
+logging:
+  level:
+    hotelbooking: TRACE
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE

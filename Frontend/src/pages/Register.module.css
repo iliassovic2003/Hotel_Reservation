@@ -771,3 +771,121 @@
 .button:disabled + .termsWarning {
   display: block;
 }
+
+.verificationMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  text-align: center;
+  animation: slideInRight 0.8s ease-out;
+  min-height: 400px;
+}
+
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.verificationMessage h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  background: linear-gradient(135deg, #A30000 0%, #FF6B6B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.verificationMessage p {
+  font-size: 16px;
+  color: #d0a9a9;
+  margin: -20px 0 100px 0;
+  line-height: 1.6;
+}
+
+.emailHighlight {
+  font-weight: 600;
+  color: #FF6B6B !important;
+  font-size: 18px !important;
+  margin: 20px 0 130px 0 !important;
+  padding: 10px 20px;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.instructions {
+  max-width: 400px;
+  margin: 20px auto !important;
+  font-size: 15px !important;
+  color: #b89090 !important;
+}
+
+.resendButton {
+  margin-top: 30px;
+  padding: 18px 36px;
+  background: linear-gradient(135deg, #5C0000 0%, #8B0000 50%, #A30000 100%);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffe6e6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  min-width: 250px;
+}
+
+.resendButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: 0.5s;
+}
+
+.resendButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(139, 0, 0, 0.4), 0 0 30px rgba(163, 0, 0, 0.2);
+  background: linear-gradient(135deg, #6B0000 0%, #9B0000 50%, #B30000 100%);
+}
+
+.resendButton:hover::before {
+  left: 100%;
+}
+
+.resendButton:active {
+  transform: translateY(-1px);
+}
+
+.resendButton:disabled {
+  background: linear-gradient(135deg, rgba(92, 0, 0, 0.4) 0%, rgba(107, 0, 0, 0.3) 50%, rgba(139, 0, 0, 0.4) 100%);
+  color: #a97d7d;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.resendButton:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.resendButton:disabled::before {
+  display: none;
+}

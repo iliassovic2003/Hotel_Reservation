@@ -4,6 +4,7 @@ import hotelbooking.dto.request.LoginRequest;
 import hotelbooking.dto.request.RegisterRequest;
 import hotelbooking.dto.response.ApiResponse;
 import hotelbooking.dto.response.AuthResponse;
+import hotelbooking.exception.*;
 
 import hotelbooking.service.AuthService;
 
@@ -13,6 +14,9 @@ import jakarta.validation.Valid;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import java.time.LocalDateTime;
+import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -67,11 +71,65 @@ public class AuthController {
     @GetMapping("/verify-email")
     @Operation(summary = "Verify email", description = "Verify user email with token")
     public ResponseEntity<ApiResponse> verifyEmail(@RequestParam String token) {
-        authService.verifyEmail(token);
+        log.info("Email verification request for token: {}", token);
+    
+        try {
+            authService.verifyEmail(token);
+            
+            return ResponseEntity.ok(ApiResponse.builder()
+                    .success(true)
+                    .message("Email verified successfully!")
+                    .timestamp(LocalDateTime.now())
+                    .build());
+                    
+        } catch (BadRequestException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(ApiResponse.builder()
+                            .success(false)
+                            .message(e.getMessage())
+                            .timestamp(LocalDateTime.now())
+                            .build());
+        }
+    }
+
+    @PostMapping("/resend-verification")
+    @Operation(summary = "Resend verification email", description = "Resend verification email to user")
+    public ResponseEntity<ApiResponse> resendVerification(@RequestBody Map<String, String> request) {
+        log.info("Resend verification request");
         
-        return ResponseEntity.ok(ApiResponse.builder()
-                .success(true)
-                .message("Email verified successfully")
-                .build());
+        String email = request.get("email");
+        if (email == null || email.trim().isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(ApiResponse.builder()
+                            .success(false)
+                            .message("Email is required")
+                            .timestamp(LocalDateTime.now())
+                            .build());
+        }
+        
+        try {
+            authService.resendVerificationEmail(email);
+            
+            return ResponseEntity.ok(ApiResponse.builder()
+                    .success(true)
+                    .message("Verification email sent successfully!")
+                    .timestamp(LocalDateTime.now())
+                    .build());
+                    
+        } catch (ResourceNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(ApiResponse.builder()
+                            .success(false)
+                            .message(e.getMessage())
+                            .timestamp(LocalDateTime.now())
+                            .build());
+        } catch (BadRequestException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(ApiResponse.builder()
+                            .success(false)
+                            .message(e.getMessage())
+                            .timestamp(LocalDateTime.now())
+                            .build());
+        }
     }
 }

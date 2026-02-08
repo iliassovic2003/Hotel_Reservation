@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "users")  // Maps to "users" table
+@Table(name = "users")
 @Data
 @Builder
 @NoArgsConstructor
@@ -18,7 +18,7 @@ public class User {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "uid")  // Maps to "uid" column
+    @Column(name = "uid")
     private Long id;
     
     @Column(name = "first_name", nullable = false, length = 100)
@@ -33,8 +33,11 @@ public class User {
     @Column(name = "email_verification")
     private boolean emailVerified;
 
-    // @Column(name = "verification_token", length = 255)
-    // private String verificationToken;
+    @Column(name = "verification_token", length = 255)
+    private String verificationToken;
+    
+    @Column(name = "verification_token_expiry")
+    private LocalDateTime verificationTokenExpiry;
     
     @Column(length = 20)
     private String phone;
@@ -48,7 +51,22 @@ public class User {
     
     @Column(name = "creation_date")
     private LocalDateTime creationDate;
+
+    @Column(name = "refresh_token", length = 500)
+    private String refreshToken;
+    
+    @Column(name = "refresh_token_expiry")
+    private LocalDateTime refreshTokenExpiry;
     
     @Column(columnDefinition = "TEXT")
     private String logs;
+
+    @PrePersist
+    protected void onCreate()
+    {
+        if (creationDate == null)
+            creationDate = LocalDateTime.now();
+        if (role == null)
+            role = Role.CUSTOMER;
+    }
 }

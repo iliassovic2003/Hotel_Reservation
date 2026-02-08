@@ -5,109 +5,106 @@
 ├── pom.xml
 ├── README.md
 ├── src
-│   └── main
-│       ├── java
-│       │   └── hotelbooking
-│       │       ├── config
-│       │       │   ├── CorsConfig.java
-│       │       │   ├── JwtConfig.java
-│       │       │   ├── OpenApiConfig.java
-│       │       │   ├── SecurityConfig.java
-│       │       │   └── WebConfig.java
-│       │       ├── controller
-│       │       │   ├── AuthController.java
-│       │       │   ├── BookingController.java
-│       │       │   ├── HotelController.java
-│       │       │   ├── RoomController.java
-│       │       │   └── UserController.java
-│       │       ├── dto
-│       │       │   ├── request
-│       │       │   │   ├── CreateBookingRequest.java
-│       │       │   │   ├── CreateHotelRequest.java
-│       │       │   │   ├── CreateRoomRequest.java
-│       │       │   │   ├── LoginRequest.java
-│       │       │   │   ├── RegisterRequest.java
-│       │       │   │   ├── SearchRequest.java
-│       │       │   │   └── UpdateHotelRequest.java
-│       │       │   └── response
-│       │       │       ├── ApiResponse.java
-│       │       │       ├── AuthResponse.java
-│       │       │       ├── BookingResponse.java
-│       │       │       ├── HotelResponse.java
-│       │       │       ├── PageResponse.java
-│       │       │       ├── RoomResponse.java
-│       │       │       └── UserResponse.java
-│       │       ├── entity
-│       │       │   ├── Booking.java
-│       │       │   ├── enums
-│       │       │   │   ├── BookingStatus.java
-│       │       │   │   ├── Role.java
-│       │       │   │   └── RoomType.java
-│       │       │   ├── Hotel.java
-│       │       │   ├── Review.java
-│       │       │   ├── Room.java
-│       │       │   └── User.java
-│       │       ├── exception
-│       │       │   ├── BadRequestException.java
-│       │       │   ├── BookingConflictException.java
-│       │       │   ├── ErrorResponse.java
-│       │       │   ├── GlobalExceptionHandler.java
-│       │       │   ├── ResourceNotFoundException.java
-│       │       │   └── UnauthorizedException.java
-│       │       ├── HotelBookingApplication.java
-│       │       ├── mapper
-│       │       │   ├── BookingMapper.java
-│       │       │   ├── HotelMapper.java
-│       │       │   ├── RoomMapper.java
-│       │       │   └── UserMapper.java
-│       │       ├── repository
-│       │       │   ├── BookingRepository.java
-│       │       │   ├── HotelRepository.java
-│       │       │   ├── RoomRepository.java
-│       │       │   └── UserRepository.java
-│       │       ├── security
-│       │       │   ├── CustomUserDetailsService.java
-│       │       │   ├── JwtAuthenticationFilter.java
-│       │       │   ├── JwtTokenProvider.java
-│       │       │   └── SecurityUtils.java
-│       │       ├── service
-│       │       │   ├── AuthService.java
-│       │       │   ├── BookingService.java
-│       │       │   ├── EmailService.java
-│       │       │   ├── HotelService.java
-│       │       │   ├── RoomService.java
-│       │       │   └── UserService.java
-│       │       ├── util
-│       │       │   ├── Constants.java
-│       │       │   └── DateUtils.java
-│       │       └── validation
-│       │           ├── annotation
-│       │           │   ├── ValidDateRange.java
-│       │           │   └── ValidPhoneNumber.java
-│       │           └── validator
-│       │               ├── DateRangeValidator.java
-│       │               └── PhoneNumberValidator.java
-│       └── resources
-│           ├── application-dev.yml
-│           ├── application-prod.yml
-│           ├── application.yml
-│           ├── db
-│           │   ├── migration
-│           │   │   ├── V1__create_users_table.sql
-│           │   │   ├── V2__create_company_table.sql
-│           │   │   ├── V3__create_hotels_table.sql
-│           │   │   ├── V4__create_owner_table.sql
-│           │   │   ├── V5__create_rooms_table.sql
-│           │   │   ├── V6__create_customer_table.sql
-│           │   │   ├── V7__create_reservation_table.sql
-│           │   │   └── V8__add_foreign_keys_and_indexes.sql
-│           │   └── schema
-│           │       └── V1__db_design.png
-│           └── static
-│               └── images
+│   ├── java
+│   │   └── hotelbooking
+│   │       ├── config
+│   │       │   ├── CorsConfig.java
+│   │       │   ├── JwtConfig.java
+│   │       │   ├── OpenApiConfig.java
+│   │       │   ├── SecurityConfig.java
+│   │       │   └── WebConfig.java
+│   │       ├── controller
+│   │       │   ├── AuthController.java
+│   │       │   ├── BookingController.java
+│   │       │   ├── HotelController.java
+│   │       │   ├── RoomController.java
+│   │       │   └── UserController.java
+│   │       ├── dto
+│   │       │   ├── request
+│   │       │   │   ├── CreateBookingRequest.java
+│   │       │   │   ├── CreateHotelRequest.java
+│   │       │   │   ├── CreateRoomRequest.java
+│   │       │   │   ├── LoginRequest.java
+│   │       │   │   ├── RegisterRequest.java
+│   │       │   │   ├── SearchRequest.java
+│   │       │   │   └── UpdateHotelRequest.java
+│   │       │   └── response
+│   │       │       ├── ApiResponse.java
+│   │       │       ├── AuthResponse.java
+│   │       │       ├── BookingResponse.java
+│   │       │       ├── HotelResponse.java
+│   │       │       ├── PageResponse.java
+│   │       │       ├── RoomResponse.java
+│   │       │       └── UserResponse.java
+│   │       ├── entity
+│   │       │   ├── Booking.java
+│   │       │   ├── enums
+│   │       │   │   ├── BookingStatus.java
+│   │       │   │   ├── Role.java
+│   │       │   │   └── RoomType.java
+│   │       │   ├── Hotel.java
+│   │       │   ├── Review.java
+│   │       │   ├── Room.java
+│   │       │   └── User.java
+│   │       ├── exception
+│   │       │   ├── BadRequestException.java
+│   │       │   ├── BookingConflictException.java
+│   │       │   ├── ErrorResponse.java
+│   │       │   ├── GlobalExceptionHandler.java
+│   │       │   ├── ResourceNotFoundException.java
+│   │       │   └── UnauthorizedException.java
+│   │       ├── mapper
+│   │       │   ├── BookingMapper.java
+│   │       │   ├── HotelMapper.java
+│   │       │   ├── RoomMapper.java
+│   │       │   └── UserMapper.java
+│   │       ├── repository
+│   │       │   ├── BookingRepository.java
+│   │       │   ├── HotelRepository.java
+│   │       │   ├── RoomRepository.java
+│   │       │   └── UserRepository.java
+│   │       ├── security
+│   │       │   ├── CustomUserDetailsService.java
+│   │       │   ├── JwtAuthenticationFilter.java
+│   │       │   ├── JwtTokenProvider.java
+│   │       │   └── SecurityUtils.java
+│   │       ├── service
+│   │       │   ├── AuthService.java
+│   │       │   ├── BookingService.java
+│   │       │   ├── EmailService.java
+│   │       │   ├── HotelService.java
+│   │       │   ├── RoomService.java
+│   │       │   └── UserService.java
+│   │       ├── util
+│   │       │   ├── Constants.java
+│   │       │   └── DateUtils.java
+│   │       └── validation
+│   │           ├── annotation
+│   │           │   ├── ValidDateRange.java
+│   │           │   └── ValidPhoneNumber.java
+│   │           └── validator
+│   │               ├── DateRangeValidator.java
+│   │               └── PhoneNumberValidator.java
+│   └── resources
+│       ├── application-dev.yml
+│       ├── application-prod.yml
+│       ├── application.yml
+│       ├── db
+│       │   ├── migration
+│       │   │   ├── V1__create_users_table.sql
+│       │   │   ├── V2__create_company_table.sql
+│       │   │   ├── V3__create_hotels_table.sql
+│       │   │   ├── V4__create_owner_table.sql
+│       │   │   ├── V5__create_rooms_table.sql
+│       │   │   ├── V6__create_customer_table.sql
+│       │   │   ├── V7__create_reservation_table.sql
+│       │   │   └── V8__add_foreign_keys_and_indexes.sql
+│       │   └── schema
+│       │       └── V1__db_design.png
+│       └── static
+│           └── images
 └── upload
 
-28 directories, 78 files
 ```
 
 ### 🏗️ Main Application Structure

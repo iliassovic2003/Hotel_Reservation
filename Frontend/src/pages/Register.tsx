@@ -14,6 +14,9 @@ const Register = () => {
     const [password2, setPassword2] = useState('');
     const [passwordErrors, setPasswordErrors] = useState<string[]>([]);
     const [loading, setLoading] = useState(false);
+    const [showVerificationMessage, setShowVerificationMessage] = useState(false);
+    const [registeredEmail, setRegisteredEmail] = useState('');
+    const [resendStatus, setResendStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
     const navigate = useNavigate();
 
     const validateEmail = (email: string): string => {
@@ -106,18 +109,37 @@ const Register = () => {
       
       console.log('Register successful:', data);
       
-      alert('Register successful!');
-      
-      if (data.role === 'ADMIN')
-        navigate('/admin/dashboard');
-      else
-        navigate('/');
+      setRegisteredEmail(email);
+      setShowVerificationMessage(true);
       
     } catch (error) {
         console.error('Register error:', error);
-        alert(error instanceof Error ? error.message : 'Login failed. Please try again.');
+        alert(error instanceof Error ? error.message : 'Registration failed. Please try again.');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleResend = async () => {
+    setResendStatus('sending');
+    try {
+      const response = await fetch('http://localhost:8080/api/auth/resend-verification', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: registeredEmail })
+      });
+      
+      if (response.ok) {
+        setResendStatus('sent');
+        setTimeout(() => setResendStatus('idle'), 3000);
+      } else {
+        setResendStatus('idle');
+      }
+    } catch (error) {
+      console.error('Resend error:', error);
+      setResendStatus('idle');
     }
   };
 
@@ -188,130 +210,153 @@ const Register = () => {
 
                 </div>
                 <div className={styles.card}>
-                  <div className={styles.credential}>
-                    <div className={styles.fullname}>
+                  {!showVerificationMessage ? (
+                    <>
+                      <div className={styles.credential}>
+                        <div className={styles.fullname}>
 
-                    <div className={styles.firstname} data-label="First Name">
-                      <input 
-                        className={styles.inputing}
-                        value={fname}
-                        onChange={(e) => setFname(e.target.value)}
-                        required
-                      />
-                    </div>
-
-                      <div className={styles.lastname} data-label="Last Name">
-                        <input 
-                          className={styles.inputing}
-                          value={lname}
-                          onChange={(e) => setLname(e.target.value)}
-                          required
-                        />
-                      </div>
-
-                    </div>
-
-                    <div className={styles.data} data-label="Email">
-                      <input 
-                        className={`${styles.inputing} ${emailError ? styles.inputError : ''}`}
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                      />
-                      {emailError && (
-                        <div className={styles.emailError}>
-                          {emailError}
+                        <div className={styles.firstname} data-label="First Name">
+                          <input 
+                            className={styles.inputing}
+                            value={fname}
+                            onChange={(e) => setFname(e.target.value)}
+                            required
+                          />
                         </div>
-                      )}
-                    </div>
 
-                    <div className={styles.data} data-label="Password">
-                      <input 
-                        className={styles.inputing} 
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        minLength={8}
-                      />
-                      
-                      {password && (
-                        <div className={styles.passwordStrength}>
-                          <div className={styles.strengthBar}>
-                            <div 
-                              className={`${styles.strengthFill} ${
-                                passwordErrors.length <= 2 ? styles.medium : 
-                                passwordErrors.length === 0 ? styles.strong : 
-                                styles.weak
-                              }`}
-                              style={{ width: `${Math.max(10, 100 - (passwordErrors.length * 20))}%` }}
-                            ></div>
+                          <div className={styles.lastname} data-label="Last Name">
+                            <input 
+                              className={styles.inputing}
+                              value={lname}
+                              onChange={(e) => setLname(e.target.value)}
+                              required
+                            />
                           </div>
-                          
-                          <ul className={styles.passwordRequirements}>
-                            <li className={password.length >= 8 ? styles.valid : styles.invalid}>
-                               At least 8 characters
-                            </li>
-                            <li className={/[A-Z]/.test(password) ? styles.valid : styles.invalid}>
-                               One uppercase letter
-                            </li>
-                            <li className={/[a-z]/.test(password) ? styles.valid : styles.invalid}>
-                               One lowercase letter
-                            </li>
-                            <li className={/\d/.test(password) ? styles.valid : styles.invalid}>
-                               One number
-                            </li>
-                            <li className={/[!@#$%^&*(),.?":{}|<>]/.test(password) ? styles.valid : styles.invalid}>
-                               One special character
-                            </li>
-                          </ul>
-                        </div>
-                      )}
-                    </div>
 
-                    <div className={styles.data} data-label="Repeat Password">
-                      <input 
-                        className={styles.inputing} 
-                        type="password"
-                        value={password2}
-                        onChange={(e) => setPassword2(e.target.value)}
-                        required
-                      />
-                      
-                      {password2 && (
-                        <div className={passwordsMatch ? styles.matchSuccess : styles.matchError}>
-                          {passwordsMatch ? '✓ Passwords match' : '✗ Passwords do not match'}
                         </div>
-                      )}
+
+                        <div className={styles.data} data-label="Email">
+                          <input 
+                            className={`${styles.inputing} ${emailError ? styles.inputError : ''}`}
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                          />
+                          {emailError && (
+                            <div className={styles.emailError}>
+                              {emailError}
+                            </div>
+                          )}
+                        </div>
+
+                        <div className={styles.data} data-label="Password">
+                          <input 
+                            className={styles.inputing} 
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            minLength={8}
+                          />
+                          
+                          {password && (
+                            <div className={styles.passwordStrength}>
+                              <div className={styles.strengthBar}>
+                                <div 
+                                  className={`${styles.strengthFill} ${
+                                    passwordErrors.length <= 2 ? styles.medium : 
+                                    passwordErrors.length === 0 ? styles.strong : 
+                                    styles.weak
+                                  }`}
+                                  style={{ width: `${Math.max(10, 100 - (passwordErrors.length * 20))}%` }}
+                                ></div>
+                              </div>
+                              
+                              <ul className={styles.passwordRequirements}>
+                                <li className={password.length >= 8 ? styles.valid : styles.invalid}>
+                                   At least 8 characters
+                                </li>
+                                <li className={/[A-Z]/.test(password) ? styles.valid : styles.invalid}>
+                                   One uppercase letter
+                                </li>
+                                <li className={/[a-z]/.test(password) ? styles.valid : styles.invalid}>
+                                   One lowercase letter
+                                </li>
+                                <li className={/\d/.test(password) ? styles.valid : styles.invalid}>
+                                   One number
+                                </li>
+                                <li className={/[!@#$%^&*(),.?":{}|<>]/.test(password) ? styles.valid : styles.invalid}>
+                                   One special character
+                                </li>
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+
+                        <div className={styles.data} data-label="Repeat Password">
+                          <input 
+                            className={styles.inputing} 
+                            type="password"
+                            value={password2}
+                            onChange={(e) => setPassword2(e.target.value)}
+                            required
+                          />
+                          
+                          {password2 && (
+                            <div className={passwordsMatch ? styles.matchSuccess : styles.matchError}>
+                              {passwordsMatch ? '✓ Passwords match' : '✗ Passwords do not match'}
+                            </div>
+                          )}
+                        </div>
+                        
+                        <div className={styles.termsContainer}>
+                          <label className={styles.termsLabel}>
+                            <input 
+                              type="checkbox"
+                              className={styles.termsCheckbox}
+                              checked={agreeTerms}
+                              onChange={(e) => setAgreeTerms(e.target.checked)}
+                              required
+                            />
+                            <span className={styles.checkmark}></span>
+                            <span className={styles.termsText}>
+                              I agree to the <Link to="/terms" className={styles.termsLink}>Terms of Service</Link> and <Link to="/privacy" className={styles.termsLink}>Privacy Policy</Link>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <form onSubmit={handleSubmit} className={styles.form}>
+                        <button
+                          type="submit"
+                          className={styles.button}
+                          disabled={!isFormValid || loading}
+                        >
+                          {loading ? 'Signing Up...' : 'Sign Up'}
+                        </button>
+                      </form>
+                      <div className={styles.change}>already with us ? <Link to="/login">log in</Link></div>
+                    </>
+                  ) : (
+                    <div className={styles.verificationMessage}>
+                      <h3>Check Your Email</h3>
+                      <p>We've sent a verification link to</p>
+                      <p className={styles.emailHighlight}>{registeredEmail}</p>
+                      <p className={styles.instructions}>
+                        Click the link in the email to verify your account and complete registration.
+                      </p>
+                      <button
+                        onClick={handleResend}
+                        className={styles.resendButton}
+                        disabled={resendStatus === 'sending'}
+                      >
+                        {resendStatus === 'sending' ? 'Sending...' : resendStatus === 'sent' ? '✓ Sent' : 'Resend Verification Email'}
+                      </button>
+                      <div className={styles.change}>
+                        <Link to="/login">Back to Login</Link>
+                      </div>
                     </div>
-                    
-                    <div className={styles.termsContainer}>
-                      <label className={styles.termsLabel}>
-                        <input 
-                          type="checkbox"
-                          className={styles.termsCheckbox}
-                          checked={agreeTerms}
-                          onChange={(e) => setAgreeTerms(e.target.checked)}
-                          required
-                        />
-                        <span className={styles.checkmark}></span>
-                        <span className={styles.termsText}>
-                          I agree to the <Link to="/terms" className={styles.termsLink}>Terms of Service</Link> and <Link to="/privacy" className={styles.termsLink}>Privacy Policy</Link>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                  <form onSubmit={handleSubmit} className={styles.form}>
-                    <button
-                      type="submit"
-                      className={styles.button}
-                      disabled={!isFormValid}
-                    >
-                      Sign Up
-                    </button>
-                  </form>
-                  <div className={styles.change}>already with us ? <Link to="/login">log in</Link></div>
+                  )}
                 </div>
             </div>
           </main>
