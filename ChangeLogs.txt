@@ -64,3 +64,10 @@ v0.7 => v0.8
       -  Added Template Mail for Password-Reset. (Future Planned)
       -  You can no Longer Login With Unverified Email's Account.
       -  Added More More Logs.
+
+v0.8 => v0.9
+    Major Updates:
+      -  Modified Schema for Database.
+      -  Added Tokens Table with its Respective RefreshTokens Entity.
+    Minor Updates:
+      -  Added Bi-directonal User/Token Relation.

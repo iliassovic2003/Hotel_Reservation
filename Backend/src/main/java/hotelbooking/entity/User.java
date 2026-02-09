@@ -2,18 +2,20 @@ package hotelbooking.entity;
 
 import hotelbooking.entity.enums.Role;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import java.time.LocalDateTime;
+import lombok.*;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
-@Data
+@Getter
+@Setter
+@ToString
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 public class User {
     
     @Id
@@ -32,17 +34,18 @@ public class User {
     
     @Column(name = "email_verification")
     private boolean emailVerified;
-
+    
     @Column(name = "verification_token", length = 255)
     private String verificationToken;
     
     @Column(name = "verification_token_expiry")
-    private LocalDateTime verificationTokenExpiry;
+    private Instant verificationTokenExpiry;
     
     @Column(length = 20)
     private String phone;
     
     @Column(nullable = false, length = 255)
+    @ToString.Exclude
     private String password;
     
     @Enumerated(EnumType.STRING)
@@ -50,23 +53,14 @@ public class User {
     private Role role;
     
     @Column(name = "creation_date")
-    private LocalDateTime creationDate;
-
-    @Column(name = "refresh_token", length = 500)
-    private String refreshToken;
-    
-    @Column(name = "refresh_token_expiry")
-    private LocalDateTime refreshTokenExpiry;
+    private Instant creationDate;
     
     @Column(columnDefinition = "TEXT")
     private String logs;
-
-    @PrePersist
-    protected void onCreate()
-    {
-        if (creationDate == null)
-            creationDate = LocalDateTime.now();
-        if (role == null)
-            role = Role.CUSTOMER;
-    }
+    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @Builder.Default
+    private List<RefreshToken> refreshTokens = new ArrayList<>();
 }

@@ -18,7 +18,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 
 
@@ -65,11 +66,11 @@ public class AuthService {
                 .email(request.getEmail().toLowerCase())
                 .emailVerified(false)
                 .verificationToken(verificationToken)
-                .verificationTokenExpiry(LocalDateTime.now().plusHours(12))
+                .verificationTokenExpiry(Instant.now().plus(12, ChronoUnit.HOURS))
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.CUSTOMER)
-                .creationDate(LocalDateTime.now())
-                .logs("Account created on " + LocalDateTime.now())
+                .creationDate(Instant.now())
+                .logs("Account created on " + Instant.now())
                 .build();
         log.info("✅ User object created");
 
@@ -124,7 +125,7 @@ public class AuthService {
         log.info("Verifying password...");
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             log.error("❌ Login failed - Invalid password for user: {}", request.getEmail());
-            user.setLogs(user.getLogs() + "\nFailed login: " + LocalDateTime.now());
+            user.setLogs(user.getLogs() + "\nFailed login: " + Instant.now());
             userRepository.save(user);
             throw new UnauthorizedException("Invalid email or password");
         }
@@ -136,7 +137,7 @@ public class AuthService {
         }
         
         // Update user logs
-        user.setLogs(user.getLogs() + "\nSuccessful login: " + LocalDateTime.now());
+        user.setLogs(user.getLogs() + "\nSuccessful login: " + Instant.now());
         userRepository.save(user);
         log.info("✅ User logs updated");
         
@@ -181,7 +182,7 @@ public class AuthService {
         }
         
         if (user.getVerificationTokenExpiry() != null && 
-            user.getVerificationTokenExpiry().isBefore(LocalDateTime.now())) {
+            user.getVerificationTokenExpiry().isBefore(Instant.now())) {
             log.error("❌ Verification token expired for: {}", user.getEmail());
             throw new BadRequestException("Verification token has expired. Please request a new one.");
         }
@@ -189,7 +190,7 @@ public class AuthService {
         user.setEmailVerified(true);
         user.setVerificationToken(null);
         user.setVerificationTokenExpiry(null);
-        user.setLogs(user.getLogs() + "\nEmail verified: " + LocalDateTime.now());
+        user.setLogs(user.getLogs() + "\nEmail verified: " + Instant.now());
         
         userRepository.save(user);
         
@@ -218,8 +219,8 @@ public class AuthService {
         // Generate new verification token
         String newVerificationToken = UUID.randomUUID().toString();
         user.setVerificationToken(newVerificationToken);
-        user.setVerificationTokenExpiry(LocalDateTime.now().plusHours(12));
-        user.setLogs(user.getLogs() + "\nVerification email resent: " + LocalDateTime.now());
+        user.setVerificationTokenExpiry(Instant.now().plus(12, ChronoUnit.HOURS));
+        user.setLogs(user.getLogs() + "\nVerification email resent: " + Instant.now());
         
         userRepository.save(user);
         

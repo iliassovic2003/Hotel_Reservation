@@ -10,8 +10,6 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     role VARCHAR(20) NOT NULL CHECK (role IN ('CUSTOMER', 'OWNER', 'ADMIN')),
     creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    refresh_token VARCHAR(500),
-    refresh_token_expiry TIMESTAMP,
     logs TEXT
 );
 

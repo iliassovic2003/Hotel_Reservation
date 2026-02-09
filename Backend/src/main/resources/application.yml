@@ -45,7 +45,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: iliaszahr.professional@gmail.com
-    password: {Password}
+    password: mhbp gfns kelw cstj
     protocol: smtp
     default-encoding: UTF-8
     properties:
@@ -61,7 +61,7 @@ spring:
   
   # Server Configuration
   server:
-    port: 8081
+    port: 8081  # Changed from 8080 to avoid conflict with Adminer
     servlet:
       context-path: /api
       session:
