@@ -43,7 +43,6 @@
 │   │       │   │   ├── Role.java
 │   │       │   │   └── RoomType.java
 │   │       │   ├── Hotel.java
-│   │       │   ├── RefreshToken.java
 │   │       │   ├── Review.java
 │   │       │   ├── Room.java
 │   │       │   └── User.java
@@ -173,9 +172,6 @@
 
 **Review.java**
 - id, userId, hotelId, rating, comment, createdAt
-
-**RefreshToken.java**
-- tid, created_time, expiry_date
 
 ### 📦 dto/ - Data Transfer Objects
 

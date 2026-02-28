@@ -61,7 +61,7 @@ spring:
   
   # Server Configuration
   server:
-    port: 8081  # Changed from 8080 to avoid conflict with Adminer
+    port: 8081
     servlet:
       context-path: /api
       session:
@@ -78,8 +78,8 @@ spring:
 # JWT Configuration
 jwt:
   secret: yoursupersecretjwtkeychangethisinproduction1234567890
-  expiration: 86400000  # 24 hours in milliseconds
-  refresh-expiration: 604800000  # 7 days for refresh tokens
+  expiration: 86400000
+  refresh-expiration: 604800000
   
 # Application Properties
 app:

@@ -71,3 +71,20 @@ v0.8 => v0.9
       -  Added Tokens Table with its Respective RefreshTokens Entity.
     Minor Updates:
       -  Added Bi-directonal User/Token Relation.
+
+v0.9 => v1.0
+    Major Updates:
+      -  Implemented Complete JWT Authentication System with Token Refresh.
+      -  Created Centralized API Service Layer (api.ts) for All HTTP Requests.
+      -  Added Automatic Access Token Refresh.
+      -  Implemented Refresh Token Rotation with Database Storage.
+      -  Added TypeScript Service Architecture (authService, hotelService).
+      -  Built Login Page with Session Message Display.
+      -  Added loading states to prevent multiple form submissions.
+    Minor Updates:
+      -  Implemented Token Expiration Checks in JwtTokenProvider.
+      -  Added Refresh Token Expiry Verification in Database.
+      -  Implemented message type differentiation (expired/invalid/default).
+      -  Fixed CORS Issues Blocking Frontend Requests.
+      -  Added JwtAuthenticationFilter to Intercept and Authenticate Requests.
+      -  Added cleanup function for setTimeout to prevent memory leaks.

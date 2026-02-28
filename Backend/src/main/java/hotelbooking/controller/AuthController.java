@@ -7,6 +7,7 @@ import hotelbooking.dto.response.AuthResponse;
 import hotelbooking.exception.*;
 
 import hotelbooking.service.AuthService;
+import hotelbooking.security.JwtTokenProvider;
 
 import io.swagger.v3.oas.annotations.Operation;
 
@@ -30,6 +31,7 @@ import org.springframework.web.bind.annotation.*;
 
 public class AuthController {
     private final AuthService authService;
+    private final JwtTokenProvider jwtTokenProvider;
 
     @PostMapping("/register")
     @Operation(summary = "Register new user", description = "Create a new customer account")
@@ -130,6 +132,72 @@ public class AuthController {
                             .message(e.getMessage())
                             .timestamp(LocalDateTime.now())
                             .build());
+        }
+    }
+
+    @PostMapping("/refresh")
+    @Operation(summary = "Refresh access token", description = "Get new access token using refresh token")
+    public ResponseEntity<AuthResponse> refreshToken(@RequestBody Map<String, String> request) {
+        log.info("Token refresh request");
+        
+        String refreshToken = request.get("refreshToken");
+        if (refreshToken == null || refreshToken.trim().isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(AuthResponse.builder()
+                            .success(false)
+                            .message("Refresh token is required")
+                            .build());
+        }
+        
+        try {
+            AuthResponse response = authService.refreshAccessToken(refreshToken);
+            return ResponseEntity.ok(response);
+            
+        } catch (BadRequestException e) {
+            log.error("Refresh token error: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(AuthResponse.builder()
+                            .success(false)
+                            .message(e.getMessage())
+                            .build());
+        }
+    }
+
+    @PostMapping("/logout")
+    @Operation(summary="Logout from session", description="Disconnect from all the sessions")
+    public ResponseEntity<ApiResponse> logout(@RequestHeader("Authorization") String authHeader) {
+        log.info("Logout request received");
+
+        try {
+            if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                        .body(ApiResponse.builder()
+                                .success(false)
+                                .message("Invalid authorization header")
+                                .timestamp(LocalDateTime.now())
+                                .build());
+            }
+
+            String token = authHeader.substring(7);
+            String email = jwtTokenProvider.getEmailFromToken(token);
+            authService.logout(email);
+
+            log.info("User logged out successfully: {}", email);
+
+            return ResponseEntity.ok(ApiResponse.builder()
+                .success(true)
+                .message("Logged out successfully from all devices")
+                .timestamp(LocalDateTime.now())
+                .build());
+
+        } catch (Exception e) {
+            log.error("Logout error: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(ApiResponse.builder()
+                        .success(false)
+                        .message("Logout failed: " + e.getMessage())
+                        .timestamp(LocalDateTime.now())
+                        .build());
         }
     }
 }

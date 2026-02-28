@@ -1,0 +1,1763 @@
+2026-02-27 20:12:47 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 1752968 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 20:12:47 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 20:12:47 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 20:12:47 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-27 20:12:47 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-27 20:12:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 20:12:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 2 JPA repository interfaces.
+2026-02-27 20:12:49 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 20:12:49 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 20:12:49 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 20:12:49 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 20:12:49 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1897 ms
+2026-02-27 20:12:49 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-02-27 20:12:49 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-02-27 20:12:49 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2026-02-27 20:12:49 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 20:12:50 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
+2026-02-27 20:12:50 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.111s)
+2026-02-27 20:12:50 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" ...
+2026-02-27 20:12:50 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
+2026-02-27 20:12:50 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "1 - create users table"
+2026-02-27 20:12:50 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "2 - create company table"
+2026-02-27 20:12:50 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "3 - create hotels table"
+2026-02-27 20:12:50 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "4 - create owner table"
+2026-02-27 20:12:51 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - create rooms table"
+2026-02-27 20:12:51 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "6 - create customer table"
+2026-02-27 20:12:51 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "7 - create reservation table"
+2026-02-27 20:12:51 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "8 - create token table"
+2026-02-27 20:12:52 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "9 - add foreign keys and indexes"
+2026-02-27 20:12:52 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 9 migrations to schema "public", now at version v9 (execution time 00:01.611s)
+2026-02-27 20:12:52 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 20:12:52 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-27 20:12:52 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 20:12:52 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 20:12:52 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-27 20:12:52 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4373add6
+2026-02-27 20:12:52 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-27 20:12:53 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 20:12:53 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 20:12:54 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:12:54 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 20:12:54 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 20:12:54 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1f730463, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1d4f93ba, org.springframework.security.web.context.SecurityContextHolderFilter@5cb3657b, org.springframework.security.web.header.HeaderWriterFilter@5d96efa0, org.springframework.web.filter.CorsFilter@5cc2ccc2, org.springframework.security.web.authentication.logout.LogoutFilter@440ca053, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@21a43e55, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23e6ac00, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70e874e0, org.springframework.security.web.access.ExceptionTranslationFilter@53776610, org.springframework.security.web.access.intercept.AuthorizationFilter@150a88d1]
+2026-02-27 20:12:55 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 20:12:55 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 20:12:55 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 8.403 seconds (process running for 8.934)
+2026-02-27 20:13:18 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-27 20:13:18 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-27 20:13:18 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-27 20:13:19 [http-nio-8080-exec-2] INFO  h.controller.AuthController - Login attempt for email: dsgfjhsdf@gmail.com
+2026-02-27 20:13:19 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - === LOGIN ATTEMPT ===
+2026-02-27 20:13:19 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - Login attempt for email: dsgfjhsdf@gmail.com
+2026-02-27 20:13:19 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - Looking for user with email: dsgfjhsdf@gmail.com
+2026-02-27 20:13:19 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid,
+        u1_0.creation_date,
+        u1_0.email,
+        u1_0.email_verification,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.logs,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.verification_token,
+        u1_0.verification_token_expiry 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-02-27 20:13:19 [http-nio-8080-exec-2] ERROR hotelbooking.service.AuthService - ❌ Login failed - User not found: dsgfjhsdf@gmail.com
+2026-02-27 20:13:19 [http-nio-8080-exec-2] WARN  h.exception.GlobalExceptionHandler - Unauthorized access: Invalid email or password
+2026-02-27 20:13:19 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [hotelbooking.exception.UnauthorizedException: Invalid email or password]
+2026-02-27 20:13:55 [http-nio-8080-exec-4] INFO  h.controller.AuthController - Registration attempt for email: iliaszahr6@gmail.com
+2026-02-27 20:13:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - === REGISTRATION STARTED ===
+2026-02-27 20:13:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - Registering user with email: iliaszahr6@gmail.com
+2026-02-27 20:13:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - Request data - First Name: ilias, Last Name: zahr, Email: iliaszahr6@gmail.com
+2026-02-27 20:13:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - Checking if email exists: iliaszahr6@gmail.com
+2026-02-27 20:13:55 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+2026-02-27 20:13:55 [http-nio-8080-exec-4] DEBUG hotelbooking.service.AuthService - Email exists check for 'iliaszahr6@gmail.com': false
+2026-02-27 20:13:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - ✅ Email is available
+2026-02-27 20:13:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - Validating password confirmation
+2026-02-27 20:13:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - ✅ Passwords match
+2026-02-27 20:13:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - Creating User object...
+2026-02-27 20:13:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - ✅ User object created
+2026-02-27 20:13:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - Saving user to database...
+2026-02-27 20:13:56 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (creation_date, email, email_verification, first_name, last_name, logs, password, phone, role, verification_token, verification_token_expiry) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-02-27 20:13:56 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - ✅ User saved successfully with ID: 1
+2026-02-27 20:13:56 [http-nio-8080-exec-4] INFO  hotelbooking.service.EmailService - 📧 Preparing verification email for: iliaszahr6@gmail.com
+2026-02-27 20:13:56 [http-nio-8080-exec-4] INFO  hotelbooking.service.EmailService - ✅ Verification template loaded successfully
+2026-02-27 20:13:59 [http-nio-8080-exec-4] INFO  hotelbooking.service.EmailService - ✅ Verification email sent to: iliaszahr6@gmail.com
+2026-02-27 20:13:59 [http-nio-8080-exec-4] INFO  hotelbooking.service.EmailService - 🔗 [DEBUG] Verification link for iliaszahr6@gmail.com: http://localhost:5173/verify-email?token=b86cf441-17ac-40a9-ba07-a212e1085bae
+2026-02-27 20:13:59 [http-nio-8080-exec-4] INFO  hotelbooking.service.EmailService - 🔑 [DEBUG] Verification token: b86cf441-17ac-40a9-ba07-a212e1085bae
+2026-02-27 20:13:59 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - Creating response...
+2026-02-27 20:13:59 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - === REGISTRATION COMPLETED SUCCESSFULLY ===
+2026-02-27 20:13:59 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - Response: AuthResponse(token=null, refreshToken=null, tokenType=null, userId=1, email=iliaszahr6@gmail.com, firstName=ilias, lastName=zahr, role=CUSTOMER, emailVerified=false, success=false, message=Registration successful. Please verify your email.)
+2026-02-27 20:13:59 [http-nio-8080-exec-4] INFO  h.controller.AuthController - User registered successfully: iliaszahr6@gmail.com
+2026-02-27 20:14:40 [http-nio-8080-exec-6] INFO  h.controller.AuthController - Email verification request for token: b86cf441-17ac-40a9-ba07-a212e1085bae
+2026-02-27 20:14:40 [http-nio-8080-exec-6] INFO  hotelbooking.service.AuthService - === EMAIL VERIFICATION STARTED ===
+2026-02-27 20:14:40 [http-nio-8080-exec-6] INFO  hotelbooking.service.AuthService - Verifying token: b86cf441-17ac-40a9-ba07-a212e1085bae
+2026-02-27 20:14:40 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid,
+        u1_0.creation_date,
+        u1_0.email,
+        u1_0.email_verification,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.logs,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.verification_token,
+        u1_0.verification_token_expiry 
+    from
+        users u1_0 
+    where
+        u1_0.verification_token=?
+2026-02-27 20:14:40 [http-nio-8080-exec-6] INFO  hotelbooking.service.AuthService - ✅ Found user: ilias zahr (iliaszahr6@gmail.com)
+2026-02-27 20:14:40 [http-nio-8080-exec-6] INFO  hotelbooking.service.AuthService - ✅ Email successfully verified for: iliaszahr6@gmail.com
+2026-02-27 20:14:40 [http-nio-8080-exec-6] INFO  hotelbooking.service.AuthService - === EMAIL VERIFICATION COMPLETED ===
+2026-02-27 20:14:40 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    update
+        users 
+    set
+        creation_date=?,
+        email=?,
+        email_verification=?,
+        first_name=?,
+        last_name=?,
+        logs=?,
+        password=?,
+        phone=?,
+        role=?,
+        verification_token=?,
+        verification_token_expiry=? 
+    where
+        uid=?
+2026-02-27 20:15:04 [http-nio-8080-exec-7] INFO  h.controller.AuthController - Login attempt for email: iliaszahr6@gmail.com
+2026-02-27 20:15:04 [http-nio-8080-exec-7] INFO  hotelbooking.service.AuthService - === LOGIN ATTEMPT ===
+2026-02-27 20:15:04 [http-nio-8080-exec-7] INFO  hotelbooking.service.AuthService - Login attempt for email: iliaszahr6@gmail.com
+2026-02-27 20:15:04 [http-nio-8080-exec-7] INFO  hotelbooking.service.AuthService - Looking for user with email: iliaszahr6@gmail.com
+2026-02-27 20:15:04 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid,
+        u1_0.creation_date,
+        u1_0.email,
+        u1_0.email_verification,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.logs,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.verification_token,
+        u1_0.verification_token_expiry 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-02-27 20:15:04 [http-nio-8080-exec-7] INFO  hotelbooking.service.AuthService - ✅ User found: ilias zahr
+2026-02-27 20:15:04 [http-nio-8080-exec-7] INFO  hotelbooking.service.AuthService - Verifying password...
+2026-02-27 20:15:04 [http-nio-8080-exec-7] ERROR hotelbooking.service.AuthService - ❌ Login failed - Invalid password for user: iliaszahr6@gmail.com
+2026-02-27 20:15:04 [http-nio-8080-exec-7] WARN  h.exception.GlobalExceptionHandler - Unauthorized access: Invalid email or password
+2026-02-27 20:15:04 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [hotelbooking.exception.UnauthorizedException: Invalid email or password]
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  h.controller.AuthController - Login attempt for email: iliaszahr6@gmail.com
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - === LOGIN ATTEMPT ===
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - Login attempt for email: iliaszahr6@gmail.com
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - Looking for user with email: iliaszahr6@gmail.com
+2026-02-27 20:15:15 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid,
+        u1_0.creation_date,
+        u1_0.email,
+        u1_0.email_verification,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.logs,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.verification_token,
+        u1_0.verification_token_expiry 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - ✅ User found: ilias zahr
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - Verifying password...
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - ✅ Password verified successfully
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - ✅ User logs updated
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - Generating JWT token...
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - ✅ JWT token generated
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - Generating refresh token...
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  h.service.RefreshTokenService - Creating refresh token for user: iliaszahr6@gmail.com
+2026-02-27 20:15:15 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tokens
+        (created_date, expiry_date, token, user_id) 
+    values
+        (?, ?, ?, ?)
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  h.service.RefreshTokenService - ✅ Refresh token created for user: iliaszahr6@gmail.com
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - ✅ Refresh token generated
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - === LOGIN SUCCESSFUL ===
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - Response with token for user: iliaszahr6@gmail.com
+2026-02-27 20:15:15 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    update
+        users 
+    set
+        creation_date=?,
+        email=?,
+        email_verification=?,
+        first_name=?,
+        last_name=?,
+        logs=?,
+        password=?,
+        phone=?,
+        role=?,
+        verification_token=?,
+        verification_token_expiry=? 
+    where
+        uid=?
+2026-02-27 20:15:15 [http-nio-8080-exec-8] INFO  h.controller.AuthController - User logged in successfully: iliaszahr6@gmail.com
+2026-02-27 20:43:30 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 30 class path changes (0 additions, 29 deletions, 1 modification)
+2026-02-27 20:43:30 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:43:30 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-27 20:43:30 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-27 20:43:31 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 1752968 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 20:43:31 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 20:43:31 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 20:43:31 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 20:43:31 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2026-02-27 20:43:31 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 20:43:31 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 20:43:31 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 20:43:31 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 20:43:31 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 712 ms
+2026-02-27 20:43:32 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 20:43:32 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.114s)
+2026-02-27 20:43:32 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 20:43:32 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 20:43:32 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 20:43:32 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 20:43:32 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 20:43:32 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-02-27 20:43:32 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@57995b04
+2026-02-27 20:43:32 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-02-27 20:43:32 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 20:43:32 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 20:43:32 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:43:32 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 20:43:32 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 2bc1c63b-8a52-4f08-9fc0-473685453bcd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-27 20:43:33 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6aaf0f30, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78a83182, org.springframework.security.web.context.SecurityContextHolderFilter@491f27d6, org.springframework.security.web.header.HeaderWriterFilter@6682e322, org.springframework.web.filter.CorsFilter@4461ff2b, org.springframework.security.web.csrf.CsrfFilter@1e6d2fe, org.springframework.security.web.authentication.logout.LogoutFilter@1588fd87, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4eaa375, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@34b1f8cd, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@72f70598, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2bf3aa7d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7ed96d29, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@455b98b7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60b34279, org.springframework.security.web.access.ExceptionTranslationFilter@30217306, org.springframework.security.web.access.intercept.AuthorizationFilter@565c18fc]
+2026-02-27 20:43:33 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 20:43:33 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 20:43:33 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 1.998 seconds (process running for 1846.737)
+2026-02-27 20:43:33 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-02-27 20:43:34 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 29 class path changes (29 additions, 0 deletions, 0 modifications)
+2026-02-27 20:43:34 [Thread-7] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:43:34 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-02-27 20:43:34 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-02-27 20:43:34 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 1752968 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 20:43:34 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 20:43:34 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 20:43:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 20:43:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 2 JPA repository interfaces.
+2026-02-27 20:43:35 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 20:43:35 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 20:43:35 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 20:43:35 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 20:43:35 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 501 ms
+2026-02-27 20:43:35 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 1760655 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 20:43:35 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 20:43:35 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 20:43:35 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 20:43:35 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.025s)
+2026-02-27 20:43:35 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 20:43:35 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 20:43:35 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-27 20:43:35 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-27 20:43:35 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 20:43:35 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 20:43:35 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 20:43:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2026-02-27 20:43:35 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@811158d
+2026-02-27 20:43:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2026-02-27 20:43:35 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 20:43:35 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 20:43:35 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:43:35 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 20:43:35 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 20:43:36 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@68ed4d4f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@d348a8a, org.springframework.security.web.context.SecurityContextHolderFilter@6648a71, org.springframework.security.web.header.HeaderWriterFilter@563237f3, org.springframework.web.filter.CorsFilter@28b2050b, org.springframework.security.web.authentication.logout.LogoutFilter@d8d163e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2bcb1fca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68d219f8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b58bf59, org.springframework.security.web.access.ExceptionTranslationFilter@7516d982, org.springframework.security.web.access.intercept.AuthorizationFilter@6aeb6e2]
+2026-02-27 20:43:36 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 20:43:36 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 20:43:36 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 1.588 seconds (process running for 1849.817)
+2026-02-27 20:43:36 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' customUserDetailsService (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+         - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-02-27 20:43:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 20:43:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 2 JPA repository interfaces.
+2026-02-27 20:43:37 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 20:43:37 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 20:43:37 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 20:43:37 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 20:43:37 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2310 ms
+2026-02-27 20:43:37 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-02-27 20:43:37 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-02-27 20:43:37 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2026-02-27 20:43:38 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 20:43:38 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.029s)
+2026-02-27 20:43:38 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 20:43:38 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 20:43:38 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 20:43:38 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-27 20:43:38 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 20:43:38 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 20:43:38 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-27 20:43:38 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a11289c
+2026-02-27 20:43:38 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-27 20:43:38 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 20:43:39 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 20:43:39 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:43:40 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 20:43:40 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 20:43:40 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4b54c1e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@81fc7d6, org.springframework.security.web.context.SecurityContextHolderFilter@18cfc20a, org.springframework.security.web.header.HeaderWriterFilter@46d9ba9c, org.springframework.web.filter.CorsFilter@d1078e9, org.springframework.security.web.authentication.logout.LogoutFilter@6caf5fd9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d28db14, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1794ffce, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@306f471a, org.springframework.security.web.access.ExceptionTranslationFilter@65fefdc6, org.springframework.security.web.access.intercept.AuthorizationFilter@562a7408]
+2026-02-27 20:43:41 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2026-02-27 20:43:41 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-02-27 20:43:41 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:43:41 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-27 20:43:41 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-27 20:43:41 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-27 20:43:41 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-27 20:44:43 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 29 class path changes (0 additions, 29 deletions, 0 modifications)
+2026-02-27 20:44:43 [Thread-11] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:44:43 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-02-27 20:44:43 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-02-27 20:44:43 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 1752968 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 20:44:43 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 20:44:43 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 20:44:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 20:44:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2026-02-27 20:44:43 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.NullPointerException: Cannot read field "generatedClass" because "data" is null
+2026-02-27 20:44:43 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-27 20:44:43 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.NullPointerException: Cannot read field "generatedClass" because "data" is null
+	at org.springframework.cglib.proxy.Enhancer.nextInstance(Enhancer.java:783) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:321) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.cglib.proxy.Enhancer.createHelper(Enhancer.java:562) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.cglib.proxy.Enhancer.createClass(Enhancer.java:407) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.createClass(ConfigurationClassEnhancer.java:138) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.enhance(ConfigurationClassEnhancer.java:109) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:533) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanFactory(ConfigurationClassPostProcessor.java:310) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:153) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.2.jar:3.2.2]
+	at hotelbooking.HotelBookingApplication.main(HotelBookingApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.2.jar:3.2.2]
+2026-02-27 20:44:45 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 1752968 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 20:44:45 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 20:44:45 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 20:44:45 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 20:44:45 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 2 JPA repository interfaces.
+2026-02-27 20:44:45 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 20:44:45 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 20:44:45 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 20:44:45 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 20:44:45 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 575 ms
+2026-02-27 20:44:45 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 1761470 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 20:44:45 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 20:44:45 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 20:44:45 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 20:44:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-27 20:44:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-27 20:44:45 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
+2026-02-27 20:44:45 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.009s)
+2026-02-27 20:44:46 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" ...
+2026-02-27 20:44:46 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
+2026-02-27 20:44:46 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "1 - create users table"
+2026-02-27 20:44:46 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "2 - create company table"
+2026-02-27 20:44:46 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "3 - create hotels table"
+2026-02-27 20:44:46 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "4 - create owner table"
+2026-02-27 20:44:47 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - create rooms table"
+2026-02-27 20:44:47 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "6 - create customer table"
+2026-02-27 20:44:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 20:44:47 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "7 - create reservation table"
+2026-02-27 20:44:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91 ms. Found 2 JPA repository interfaces.
+2026-02-27 20:44:47 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "8 - create token table"
+2026-02-27 20:44:47 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "9 - add foreign keys and indexes"
+2026-02-27 20:44:47 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 9 migrations to schema "public", now at version v9 (execution time 00:01.451s)
+2026-02-27 20:44:47 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 20:44:47 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 20:44:47 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 20:44:47 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2026-02-27 20:44:48 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@23afd505
+2026-02-27 20:44:48 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2026-02-27 20:44:48 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 20:44:48 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 20:44:48 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:44:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 20:44:48 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 20:44:48 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 20:44:48 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 20:44:48 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2242 ms
+2026-02-27 20:44:48 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 20:44:48 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 20:44:48 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@20f795f7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6341cf42, org.springframework.security.web.context.SecurityContextHolderFilter@605b8f9e, org.springframework.security.web.header.HeaderWriterFilter@6e8f4064, org.springframework.web.filter.CorsFilter@46f6b61e, org.springframework.security.web.authentication.logout.LogoutFilter@1dcc1e38, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@113048d1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@354fa84e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20caa1b2, org.springframework.security.web.access.ExceptionTranslationFilter@3d132910, org.springframework.security.web.access.intercept.AuthorizationFilter@5d377db7]
+2026-02-27 20:44:48 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 20:44:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 20:44:48 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 3.36 seconds (process running for 1922.223)
+2026-02-27 20:44:48 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-02-27 20:44:48 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-02-27 20:44:48 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-02-27 20:44:48 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2026-02-27 20:44:48 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 20:44:48 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.039s)
+2026-02-27 20:44:48 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 20:44:48 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 20:44:48 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 20:44:48 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-27 20:44:48 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 20:44:49 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 20:44:49 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-27 20:44:49 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@127d6317
+2026-02-27 20:44:49 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-27 20:44:49 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 20:44:50 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 20:44:50 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:44:50 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 20:44:51 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 20:44:51 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@45c02e69, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17247583, org.springframework.security.web.context.SecurityContextHolderFilter@703c792e, org.springframework.security.web.header.HeaderWriterFilter@39d8008, org.springframework.web.filter.CorsFilter@612ef7e5, org.springframework.security.web.authentication.logout.LogoutFilter@2ed6c208, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52c7f6cf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2fe9b610, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2cb6692c, org.springframework.security.web.access.ExceptionTranslationFilter@729dc099, org.springframework.security.web.access.intercept.AuthorizationFilter@a9f9c6e]
+2026-02-27 20:44:51 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2026-02-27 20:44:51 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-02-27 20:44:51 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:44:51 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-27 20:44:51 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-27 20:44:51 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-27 20:44:51 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-27 20:45:47 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 29 class path changes (0 additions, 29 deletions, 0 modifications)
+2026-02-27 20:45:47 [Thread-15] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:45:47 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2026-02-27 20:45:47 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2026-02-27 20:45:47 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 1752968 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 20:45:47 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 20:45:47 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 20:45:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 20:45:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2026-02-27 20:45:47 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.NullPointerException: Cannot read field "generatedClass" because "data" is null
+2026-02-27 20:45:47 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-27 20:45:47 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.NullPointerException: Cannot read field "generatedClass" because "data" is null
+	at org.springframework.cglib.proxy.Enhancer.nextInstance(Enhancer.java:783) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:321) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.cglib.proxy.Enhancer.createHelper(Enhancer.java:562) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.cglib.proxy.Enhancer.createClass(Enhancer.java:407) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.createClass(ConfigurationClassEnhancer.java:138) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.enhance(ConfigurationClassEnhancer.java:109) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:533) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanFactory(ConfigurationClassPostProcessor.java:310) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:153) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.2.jar:3.2.2]
+	at hotelbooking.HotelBookingApplication.main(HotelBookingApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.2.jar:3.2.2]
+2026-02-27 20:45:49 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 1752968 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 20:45:49 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 20:45:49 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 20:45:49 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 1762234 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 20:45:49 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 20:45:49 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 20:45:49 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-27 20:45:49 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-27 20:45:49 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 20:45:49 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
+2026-02-27 20:45:49 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 20:45:49 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 20:45:49 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 20:45:49 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 20:45:49 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 633 ms
+2026-02-27 20:45:50 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 20:45:50 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
+2026-02-27 20:45:50 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.014s)
+2026-02-27 20:45:50 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" ...
+2026-02-27 20:45:50 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
+2026-02-27 20:45:50 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "1 - create users table"
+2026-02-27 20:45:50 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "2 - create company table"
+2026-02-27 20:45:50 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "3 - create hotels table"
+2026-02-27 20:45:50 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 20:45:50 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 2 JPA repository interfaces.
+2026-02-27 20:45:50 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "4 - create owner table"
+2026-02-27 20:45:50 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - create rooms table"
+2026-02-27 20:45:51 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "6 - create customer table"
+2026-02-27 20:45:51 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "7 - create reservation table"
+2026-02-27 20:45:51 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 20:45:51 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 20:45:51 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 20:45:51 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 20:45:51 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1792 ms
+2026-02-27 20:45:51 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "8 - create token table"
+2026-02-27 20:45:51 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-02-27 20:45:51 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-02-27 20:45:51 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2026-02-27 20:45:51 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 20:45:51 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.032s)
+2026-02-27 20:45:51 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "9 - add foreign keys and indexes"
+2026-02-27 20:45:51 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 9 migrations to schema "public", now at version v9 (execution time 00:01.312s)
+2026-02-27 20:45:51 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 20:45:51 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 20:45:51 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 20:45:51 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2026-02-27 20:45:51 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@64a09e8d
+2026-02-27 20:45:51 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2026-02-27 20:45:51 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 20:45:51 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 20:45:51 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:45:51 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 20:45:52 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 20:45:52 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6d3e67d2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c11a55a, org.springframework.security.web.context.SecurityContextHolderFilter@44c05fe7, org.springframework.security.web.header.HeaderWriterFilter@c43e95b, org.springframework.web.filter.CorsFilter@11ff48fc, org.springframework.security.web.authentication.logout.LogoutFilter@3c91b1ee, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28e77538, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69f2c377, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17733a3d, org.springframework.security.web.access.ExceptionTranslationFilter@2fedc734, org.springframework.security.web.access.intercept.AuthorizationFilter@505ada04]
+2026-02-27 20:45:52 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 20:45:52 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 20:45:52 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 2.974 seconds (process running for 1985.884)
+2026-02-27 20:45:52 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-02-27 20:45:52 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 20:45:52 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 20:45:52 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 20:45:52 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-27 20:45:52 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 20:45:53 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 20:45:53 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-27 20:45:53 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@48efc9ed
+2026-02-27 20:45:53 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-27 20:45:53 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 20:45:54 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 20:45:54 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:45:54 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 20:45:54 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 20:45:55 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@511e706d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@231f894d, org.springframework.security.web.context.SecurityContextHolderFilter@10516372, org.springframework.security.web.header.HeaderWriterFilter@5eeefe88, org.springframework.web.filter.CorsFilter@2f4a5783, org.springframework.security.web.authentication.logout.LogoutFilter@37f5c95b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36b1a699, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d0c897e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ed6c208, org.springframework.security.web.access.ExceptionTranslationFilter@5dc95f41, org.springframework.security.web.access.intercept.AuthorizationFilter@bc0f32e]
+2026-02-27 20:45:55 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2026-02-27 20:45:55 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-02-27 20:45:55 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 20:45:55 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-27 20:45:55 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-27 20:45:55 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-27 20:45:55 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  h.controller.AuthController - Registration attempt for email: iliaszahr6@gmail.com
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - === REGISTRATION STARTED ===
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - Registering user with email: iliaszahr6@gmail.com
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - Request data - First Name: ilias, Last Name: zahr, Email: iliaszahr6@gmail.com
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - Checking if email exists: iliaszahr6@gmail.com
+2026-02-27 20:47:22 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+2026-02-27 20:47:22 [http-nio-8080-exec-1] DEBUG hotelbooking.service.AuthService - Email exists check for 'iliaszahr6@gmail.com': false
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - ✅ Email is available
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - Validating password confirmation
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - ✅ Passwords match
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - Creating User object...
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - ✅ User object created
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - Saving user to database...
+2026-02-27 20:47:22 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (creation_date, email, email_verification, first_name, last_name, logs, password, phone, role, verification_token, verification_token_expiry) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - ✅ User saved successfully with ID: 1
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.EmailService - 📧 Preparing verification email for: iliaszahr6@gmail.com
+2026-02-27 20:47:22 [http-nio-8080-exec-1] INFO  hotelbooking.service.EmailService - ✅ Verification template loaded successfully
+2026-02-27 20:47:24 [http-nio-8080-exec-1] INFO  hotelbooking.service.EmailService - ✅ Verification email sent to: iliaszahr6@gmail.com
+2026-02-27 20:47:24 [http-nio-8080-exec-1] INFO  hotelbooking.service.EmailService - 🔗 [DEBUG] Verification link for iliaszahr6@gmail.com: http://localhost:5173/verify-email?token=fc7f6f01-4e74-4376-8160-6ed6d138fd8a
+2026-02-27 20:47:24 [http-nio-8080-exec-1] INFO  hotelbooking.service.EmailService - 🔑 [DEBUG] Verification token: fc7f6f01-4e74-4376-8160-6ed6d138fd8a
+2026-02-27 20:47:24 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - Creating response...
+2026-02-27 20:47:24 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - === REGISTRATION COMPLETED SUCCESSFULLY ===
+2026-02-27 20:47:24 [http-nio-8080-exec-1] INFO  hotelbooking.service.AuthService - Response: AuthResponse(token=null, refreshToken=null, tokenType=null, userId=1, email=iliaszahr6@gmail.com, firstName=ilias, lastName=zahr, role=CUSTOMER, emailVerified=false, success=false, message=Registration successful. Please verify your email.)
+2026-02-27 20:47:24 [http-nio-8080-exec-1] INFO  h.controller.AuthController - User registered successfully: iliaszahr6@gmail.com
+2026-02-27 20:47:43 [http-nio-8080-exec-3] INFO  h.controller.AuthController - Email verification request for token: fc7f6f01-4e74-4376-8160-6ed6d138fd8a
+2026-02-27 20:47:43 [http-nio-8080-exec-3] INFO  hotelbooking.service.AuthService - === EMAIL VERIFICATION STARTED ===
+2026-02-27 20:47:43 [http-nio-8080-exec-3] INFO  hotelbooking.service.AuthService - Verifying token: fc7f6f01-4e74-4376-8160-6ed6d138fd8a
+2026-02-27 20:47:44 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid,
+        u1_0.creation_date,
+        u1_0.email,
+        u1_0.email_verification,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.logs,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.verification_token,
+        u1_0.verification_token_expiry 
+    from
+        users u1_0 
+    where
+        u1_0.verification_token=?
+2026-02-27 20:47:44 [http-nio-8080-exec-3] INFO  hotelbooking.service.AuthService - ✅ Found user: ilias zahr (iliaszahr6@gmail.com)
+2026-02-27 20:47:44 [http-nio-8080-exec-3] INFO  hotelbooking.service.AuthService - ✅ Email successfully verified for: iliaszahr6@gmail.com
+2026-02-27 20:47:44 [http-nio-8080-exec-3] INFO  hotelbooking.service.AuthService - === EMAIL VERIFICATION COMPLETED ===
+2026-02-27 20:47:44 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    update
+        users 
+    set
+        creation_date=?,
+        email=?,
+        email_verification=?,
+        first_name=?,
+        last_name=?,
+        logs=?,
+        password=?,
+        phone=?,
+        role=?,
+        verification_token=?,
+        verification_token_expiry=? 
+    where
+        uid=?
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  h.controller.AuthController - Login attempt for email: iliaszahr6@gmail.com
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - === LOGIN ATTEMPT ===
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - Login attempt for email: iliaszahr6@gmail.com
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - Looking for user with email: iliaszahr6@gmail.com
+2026-02-27 20:48:02 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid,
+        u1_0.creation_date,
+        u1_0.email,
+        u1_0.email_verification,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.logs,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.verification_token,
+        u1_0.verification_token_expiry 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - ✅ User found: ilias zahr
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - Verifying password...
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - ✅ Password verified successfully
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - ✅ User logs updated
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - Generating JWT token...
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - ✅ JWT token generated
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - Generating refresh token...
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  h.service.RefreshTokenService - Creating refresh token for user: iliaszahr6@gmail.com
+2026-02-27 20:48:02 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.tid,
+        rt1_0.created_date,
+        rt1_0.expiry_date,
+        rt1_0.token,
+        rt1_0.user_id 
+    from
+        tokens rt1_0 
+    where
+        rt1_0.user_id=?
+2026-02-27 20:48:02 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tokens
+        (created_date, expiry_date, token, user_id) 
+    values
+        (?, ?, ?, ?)
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  h.service.RefreshTokenService - ✅ Refresh token created for user: iliaszahr6@gmail.com
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - ✅ Refresh token generated
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - === LOGIN SUCCESSFUL ===
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  hotelbooking.service.AuthService - Response with token for user: iliaszahr6@gmail.com
+2026-02-27 20:48:02 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    update
+        users 
+    set
+        creation_date=?,
+        email=?,
+        email_verification=?,
+        first_name=?,
+        last_name=?,
+        logs=?,
+        password=?,
+        phone=?,
+        role=?,
+        verification_token=?,
+        verification_token_expiry=? 
+    where
+        uid=?
+2026-02-27 20:48:02 [http-nio-8080-exec-5] INFO  h.controller.AuthController - User logged in successfully: iliaszahr6@gmail.com
+2026-02-27 22:30:10 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 406203 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 22:30:10 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 22:30:10 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 22:30:10 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-27 22:30:10 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-27 22:30:11 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 22:30:11 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 2 JPA repository interfaces.
+2026-02-27 22:30:12 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 22:30:12 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 22:30:12 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 22:30:12 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 22:30:12 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1982 ms
+2026-02-27 22:30:12 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-02-27 22:30:12 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-02-27 22:30:12 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2026-02-27 22:30:12 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 22:30:12 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
+2026-02-27 22:30:12 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.021s)
+2026-02-27 22:30:12 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" ...
+2026-02-27 22:30:12 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
+2026-02-27 22:30:12 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "1 - create users table"
+2026-02-27 22:30:13 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "2 - create company table"
+2026-02-27 22:30:13 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "3 - create hotels table"
+2026-02-27 22:30:13 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "4 - create owner table"
+2026-02-27 22:30:13 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - create rooms table"
+2026-02-27 22:30:14 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "6 - create customer table"
+2026-02-27 22:30:14 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "7 - create reservation table"
+2026-02-27 22:30:14 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "8 - create token table"
+2026-02-27 22:30:15 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "9 - add foreign keys and indexes"
+2026-02-27 22:30:15 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 9 migrations to schema "public", now at version v9 (execution time 00:01.821s)
+2026-02-27 22:30:15 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 22:30:15 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-27 22:30:15 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 22:30:15 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 22:30:15 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-27 22:30:15 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@223657b0
+2026-02-27 22:30:15 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-27 22:30:15 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 22:30:16 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 22:30:16 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 22:30:17 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 22:30:17 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-27 22:30:17 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 22:30:17 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@34c5c3c0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@609dba5c, org.springframework.security.web.context.SecurityContextHolderFilter@54e8f31a, org.springframework.security.web.header.HeaderWriterFilter@15a55099, org.springframework.web.filter.CorsFilter@6282fc38, org.springframework.security.web.authentication.logout.LogoutFilter@4a656899, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5604fab5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@286a551, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@514efeb5, org.springframework.security.web.access.ExceptionTranslationFilter@3b0f210a, org.springframework.security.web.access.intercept.AuthorizationFilter@420d7a0]
+2026-02-27 22:30:18 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 22:30:18 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 22:30:18 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 8.537 seconds (process running for 9.073)
+2026-02-27 22:30:25 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-27 22:30:25 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-27 22:30:25 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-02-27 23:27:22 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 423772 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 23:27:22 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 23:27:22 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 23:27:23 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-27 23:27:23 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-27 23:27:24 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 23:27:24 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 75 ms. Found 2 JPA repository interfaces.
+2026-02-27 23:27:25 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 23:27:25 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 23:27:25 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 23:27:25 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 23:27:25 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2220 ms
+2026-02-27 23:27:25 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-02-27 23:27:25 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-02-27 23:27:25 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2026-02-27 23:27:25 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 23:27:26 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.186s)
+2026-02-27 23:27:26 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 23:27:26 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 23:27:26 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 23:27:26 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-27 23:27:26 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 23:27:26 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 23:27:26 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-27 23:27:27 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6d049e5a
+2026-02-27 23:27:27 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-27 23:27:27 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 23:27:28 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 23:27:28 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:27:28 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 23:27:28 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-27 23:27:29 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 23:27:29 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@233e7087, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7775b21a, org.springframework.security.web.context.SecurityContextHolderFilter@1ead4d28, org.springframework.security.web.header.HeaderWriterFilter@4ebc802d, org.springframework.web.filter.CorsFilter@1f971607, org.springframework.security.web.authentication.logout.LogoutFilter@2dd95a27, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1281ec16, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@401719e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47d7fc93, org.springframework.security.web.access.ExceptionTranslationFilter@4bd07ff9, org.springframework.security.web.access.intercept.AuthorizationFilter@9cc28c3]
+2026-02-27 23:27:29 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 23:27:29 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 23:27:29 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 7.538 seconds (process running for 8.161)
+2026-02-27 23:28:30 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-27 23:28:30 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-27 23:28:30 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-27 23:31:27 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 29 class path changes (0 additions, 29 deletions, 0 modifications)
+2026-02-27 23:31:27 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:31:27 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-27 23:31:27 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-27 23:31:27 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 423772 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 23:31:27 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 23:31:27 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 23:31:27 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 23:31:27 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2026-02-27 23:31:27 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 23:31:27 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 23:31:27 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 23:31:27 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 23:31:27 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 551 ms
+2026-02-27 23:31:28 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 23:31:28 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.054s)
+2026-02-27 23:31:28 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 23:31:28 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 23:31:28 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 23:31:28 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 23:31:28 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 23:31:28 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-02-27 23:31:28 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@44fdb85e
+2026-02-27 23:31:28 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-02-27 23:31:28 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 23:31:28 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 23:31:28 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:31:28 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 23:31:28 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 711965c5-54c0-4e27-88bb-ee1c4bfc5b01
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-27 23:31:28 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6f910f63, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ae032cf, org.springframework.security.web.context.SecurityContextHolderFilter@28d47647, org.springframework.security.web.header.HeaderWriterFilter@3d55c6e, org.springframework.web.filter.CorsFilter@74540da2, org.springframework.security.web.csrf.CsrfFilter@54aed547, org.springframework.security.web.authentication.logout.LogoutFilter@58861d5a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3ebb2640, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@b9fdbe8, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@739689e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@50747d53, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@af28af7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2280c5fa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60b4950d, org.springframework.security.web.access.ExceptionTranslationFilter@493c3cd7, org.springframework.security.web.access.intercept.AuthorizationFilter@56bf8d00]
+2026-02-27 23:31:28 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 23:31:28 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 23:31:28 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 1.448 seconds (process running for 247.044)
+2026-02-27 23:31:28 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-02-27 23:31:30 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 30 class path changes (30 additions, 0 deletions, 0 modifications)
+2026-02-27 23:31:30 [Thread-7] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:31:30 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-02-27 23:31:30 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-02-27 23:31:30 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 423772 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 23:31:30 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 23:31:30 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 23:31:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 23:31:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 2 JPA repository interfaces.
+2026-02-27 23:31:30 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 425947 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 23:31:30 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 23:31:30 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 23:31:30 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-27 23:31:30 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-27 23:31:30 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 23:31:30 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 23:31:30 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 23:31:30 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 23:31:30 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 525 ms
+2026-02-27 23:31:30 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 23:31:31 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.018s)
+2026-02-27 23:31:31 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 23:31:31 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 23:31:31 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 23:31:31 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 23:31:31 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 23:31:31 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2026-02-27 23:31:31 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@3e3670ff
+2026-02-27 23:31:31 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2026-02-27 23:31:31 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 23:31:31 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 23:31:31 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:31:31 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 23:31:31 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes/hotelbooking/controller/AuthController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authService' defined in file [/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes/hotelbooking/service/AuthService.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'org.springframework.security.crypto.password.PasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-02-27 23:31:31 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:31:31 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-02-27 23:31:31 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-02-27 23:31:31 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-02-27 23:31:31 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-27 23:31:31 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in hotelbooking.service.AuthService required a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' in your configuration.
+
+2026-02-27 23:31:32 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 23:31:32 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 92 ms. Found 2 JPA repository interfaces.
+2026-02-27 23:31:32 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 23:31:32 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 23:31:32 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 23:31:32 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 23:31:32 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2097 ms
+2026-02-27 23:31:33 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-02-27 23:31:33 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-02-27 23:31:33 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2026-02-27 23:31:33 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 23:31:33 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.028s)
+2026-02-27 23:31:33 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 23:31:33 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 23:31:33 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 23:31:33 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-27 23:31:33 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 23:31:33 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 23:31:33 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-27 23:31:33 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@b651dca
+2026-02-27 23:31:33 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-27 23:31:34 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 23:31:35 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 23:31:35 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:31:35 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 23:31:35 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes/hotelbooking/controller/AuthController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authService' defined in file [/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes/hotelbooking/service/AuthService.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'org.springframework.security.crypto.password.PasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-02-27 23:31:35 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:31:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-27 23:31:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-27 23:31:35 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-02-27 23:31:35 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-27 23:31:35 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in hotelbooking.service.AuthService required a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' in your configuration.
+
+2026-02-27 23:32:32 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 423772 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 23:32:32 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 23:32:32 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 23:32:32 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 23:32:32 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2026-02-27 23:32:32 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 23:32:32 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 23:32:32 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 23:32:32 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 23:32:32 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 321 ms
+2026-02-27 23:32:32 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 23:32:32 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.009s)
+2026-02-27 23:32:32 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 23:32:32 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 23:32:32 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 23:32:32 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 23:32:32 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 23:32:32 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2026-02-27 23:32:32 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@24e2a402
+2026-02-27 23:32:32 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2026-02-27 23:32:32 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 23:32:32 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 23:32:32 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:32:32 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 23:32:32 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 7cc3b82a-740d-410e-a4f5-2ddf70134f65
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-27 23:32:32 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1e10524e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49fffd1d, org.springframework.security.web.context.SecurityContextHolderFilter@f6f32b5, org.springframework.security.web.header.HeaderWriterFilter@e6f589e, org.springframework.web.filter.CorsFilter@568a48b7, org.springframework.security.web.csrf.CsrfFilter@2317336b, org.springframework.security.web.authentication.logout.LogoutFilter@1ed588a4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@791cded3, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@33d9a916, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6ac73a93, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4b3ee9fc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15f9d458, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4786a2d0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76d997a7, org.springframework.security.web.access.ExceptionTranslationFilter@6366296e, org.springframework.security.web.access.intercept.AuthorizationFilter@12d8bc05]
+2026-02-27 23:32:32 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 23:32:32 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 23:32:32 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 0.746 seconds (process running for 311.222)
+2026-02-27 23:32:32 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-02-27 23:33:20 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-27 23:33:20 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-27 23:33:20 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-27 23:36:03 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 427692 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 23:36:03 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 23:36:03 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 23:36:03 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 30 class path changes (30 additions, 0 deletions, 0 modifications)
+2026-02-27 23:36:03 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-27 23:36:03 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-27 23:36:03 [Thread-11] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:36:03 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2026-02-27 23:36:03 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2026-02-27 23:36:03 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 423772 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 23:36:03 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 23:36:03 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 23:36:03 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 23:36:03 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2026-02-27 23:36:03 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 23:36:03 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 23:36:03 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 23:36:03 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 23:36:03 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 457 ms
+2026-02-27 23:36:03 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 23:36:03 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.012s)
+2026-02-27 23:36:03 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 23:36:03 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 23:36:03 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 23:36:03 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 23:36:03 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 23:36:03 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2026-02-27 23:36:03 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@735418c2
+2026-02-27 23:36:03 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2026-02-27 23:36:03 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 23:36:03 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 23:36:03 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:36:04 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 23:36:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 23:36:04 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 23:36:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 2 JPA repository interfaces.
+2026-02-27 23:36:04 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@f7742d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@429f93be, org.springframework.security.web.context.SecurityContextHolderFilter@5a0ca9a6, org.springframework.security.web.header.HeaderWriterFilter@102fb657, org.springframework.web.filter.CorsFilter@1b7189bf, org.springframework.web.filter.CorsFilter@1b7189bf, org.springframework.security.web.authentication.logout.LogoutFilter@6444ddd0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2315d3d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@364a9b08, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a2ad79a, org.springframework.security.web.access.ExceptionTranslationFilter@6b3fceb9, org.springframework.security.web.access.intercept.AuthorizationFilter@bb2750d]
+2026-02-27 23:36:04 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 23:36:04 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 23:36:04 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 1.141 seconds (process running for 522.561)
+2026-02-27 23:36:04 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' filterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' customUserDetailsService (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+         - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-02-27 23:36:04 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 23:36:04 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 23:36:04 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 23:36:04 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 23:36:04 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1702 ms
+2026-02-27 23:36:05 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-02-27 23:36:05 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-02-27 23:36:05 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2026-02-27 23:36:05 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 23:36:05 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.026s)
+2026-02-27 23:36:05 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 23:36:05 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 23:36:05 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 23:36:05 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-27 23:36:05 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 23:36:05 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 23:36:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-27 23:36:05 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d88f7ea
+2026-02-27 23:36:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-27 23:36:05 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 23:36:06 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 23:36:06 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:36:06 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 23:36:06 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-27 23:36:07 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 23:36:07 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@325d9355, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a5c0095, org.springframework.security.web.context.SecurityContextHolderFilter@3f66a619, org.springframework.security.web.header.HeaderWriterFilter@5ee5333e, org.springframework.web.filter.CorsFilter@2d69799, org.springframework.web.filter.CorsFilter@2d69799, org.springframework.security.web.authentication.logout.LogoutFilter@347cb89b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@c8ca9d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73c7bd5b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20563c75, org.springframework.security.web.access.ExceptionTranslationFilter@4c686c3e, org.springframework.security.web.access.intercept.AuthorizationFilter@4bc82912]
+2026-02-27 23:36:07 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2026-02-27 23:36:07 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-02-27 23:36:07 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:36:07 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-27 23:36:07 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-27 23:36:07 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-27 23:36:07 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-02-27 23:36:55 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:36:55 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2026-02-27 23:36:55 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2026-02-27 23:37:12 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 428063 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 23:37:12 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 23:37:12 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 23:37:12 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-27 23:37:12 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-27 23:37:13 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 23:37:13 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 2 JPA repository interfaces.
+2026-02-27 23:37:13 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 23:37:13 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 23:37:13 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 23:37:13 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 23:37:13 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1398 ms
+2026-02-27 23:37:13 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-02-27 23:37:13 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-02-27 23:37:13 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2026-02-27 23:37:13 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 23:37:13 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.026s)
+2026-02-27 23:37:14 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 9
+2026-02-27 23:37:14 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-02-27 23:37:14 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 23:37:14 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-27 23:37:14 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 23:37:14 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 23:37:14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-27 23:37:14 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72c59041
+2026-02-27 23:37:14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-27 23:37:14 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 23:37:15 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 23:37:15 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:37:15 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 23:37:15 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-27 23:37:16 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 23:37:16 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3fe486df, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a638603, org.springframework.security.web.context.SecurityContextHolderFilter@4d0a5cc5, org.springframework.security.web.header.HeaderWriterFilter@6996727e, org.springframework.web.filter.CorsFilter@1dcb61d8, org.springframework.web.filter.CorsFilter@1dcb61d8, org.springframework.security.web.authentication.logout.LogoutFilter@1ba1973e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1ac80105, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f4d2d01, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@311f3417, org.springframework.security.web.access.ExceptionTranslationFilter@3b010e21, org.springframework.security.web.access.intercept.AuthorizationFilter@47618ac2]
+2026-02-27 23:37:16 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 23:37:16 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 23:37:16 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 4.735 seconds (process running for 5.046)
+2026-02-27 23:37:55 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-27 23:37:55 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-27 23:37:55 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-27 23:37:55 [http-nio-8080-exec-2] ERROR h.exception.GlobalExceptionHandler - Unexpected error: 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource auth/register.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at hotelbooking.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:39)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-02-27 23:37:55 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource auth/register.]
+2026-02-27 23:39:07 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:39:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-27 23:39:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-27 23:39:31 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 429187 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 23:39:31 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 23:39:31 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 23:39:31 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-27 23:39:31 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-27 23:39:31 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 23:39:31 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces.
+2026-02-27 23:39:32 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 23:39:32 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 23:39:32 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 23:39:32 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 23:39:32 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1401 ms
+2026-02-27 23:39:32 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-02-27 23:39:32 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-02-27 23:39:32 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2026-02-27 23:39:32 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 23:39:32 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
+2026-02-27 23:39:32 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.020s)
+2026-02-27 23:39:32 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" ...
+2026-02-27 23:39:32 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
+2026-02-27 23:39:32 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "1 - create users table"
+2026-02-27 23:39:33 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "2 - create company table"
+2026-02-27 23:39:33 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "3 - create hotels table"
+2026-02-27 23:39:33 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "4 - create owner table"
+2026-02-27 23:39:33 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - create rooms table"
+2026-02-27 23:39:33 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "6 - create customer table"
+2026-02-27 23:39:33 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "7 - create reservation table"
+2026-02-27 23:39:34 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "8 - create token table"
+2026-02-27 23:39:35 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "9 - add foreign keys and indexes"
+2026-02-27 23:39:35 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 9 migrations to schema "public", now at version v9 (execution time 00:01.905s)
+2026-02-27 23:39:35 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 23:39:35 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-27 23:39:35 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 23:39:35 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 23:39:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-27 23:39:35 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c775b5e
+2026-02-27 23:39:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-27 23:39:35 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 23:39:36 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 23:39:36 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:39:36 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 23:39:36 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-27 23:39:37 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 23:39:37 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6e9abaf0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2589089a, org.springframework.security.web.context.SecurityContextHolderFilter@72abbbe, org.springframework.security.web.header.HeaderWriterFilter@5f061093, org.springframework.web.filter.CorsFilter@5d627e38, org.springframework.web.filter.CorsFilter@5d627e38, org.springframework.security.web.authentication.logout.LogoutFilter@4627de6b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f6f8148, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7bd8c10d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a0ef9aa, org.springframework.security.web.access.ExceptionTranslationFilter@291d844f, org.springframework.security.web.access.intercept.AuthorizationFilter@1ec62dcc]
+2026-02-27 23:39:37 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 23:39:37 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 23:39:37 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 7.141 seconds (process running for 7.42)
+2026-02-27 23:39:43 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-27 23:39:43 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-27 23:39:43 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-27 23:41:25 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:41:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-27 23:41:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-27 23:42:53 [restartedMain] INFO  h.HotelBookingApplication - Starting HotelBookingApplication using Java 17.0.18 with PID 430780 (/media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend/target/classes started by izahr in /media/izahr/Nouveau nom/ilias/Hotel-Booking/Backend)
+2026-02-27 23:42:53 [restartedMain] DEBUG h.HotelBookingApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-27 23:42:53 [restartedMain] INFO  h.HotelBookingApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-27 23:42:53 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-27 23:42:53 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-27 23:42:54 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27 23:42:54 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces.
+2026-02-27 23:42:55 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-27 23:42:55 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-27 23:42:55 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-27 23:42:55 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-27 23:42:55 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1423 ms
+2026-02-27 23:42:55 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-02-27 23:42:55 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-02-27 23:42:55 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - 
+2026-02-27 23:42:55 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5555/hotelbooking (PostgreSQL 15.17)
+2026-02-27 23:42:55 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
+2026-02-27 23:42:55 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.020s)
+2026-02-27 23:42:55 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" ...
+2026-02-27 23:42:55 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
+2026-02-27 23:42:55 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "1 - create users table"
+2026-02-27 23:42:56 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "2 - create company table"
+2026-02-27 23:42:56 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "3 - create hotels table"
+2026-02-27 23:42:56 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "4 - create owner table"
+2026-02-27 23:42:56 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - create rooms table"
+2026-02-27 23:42:56 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "6 - create customer table"
+2026-02-27 23:42:57 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "7 - create reservation table"
+2026-02-27 23:42:57 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "8 - create token table"
+2026-02-27 23:42:57 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "9 - add foreign keys and indexes"
+2026-02-27 23:42:57 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 9 migrations to schema "public", now at version v9 (execution time 00:01.565s)
+2026-02-27 23:42:57 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27 23:42:57 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-27 23:42:58 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-27 23:42:58 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27 23:42:58 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-27 23:42:58 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@71daeb13
+2026-02-27 23:42:58 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-27 23:42:58 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-27 23:42:59 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27 23:42:59 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27 23:42:59 [restartedMain] DEBUG h.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-27 23:42:59 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-27 23:42:59 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27 23:43:00 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@509565ea, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c363d37, org.springframework.security.web.context.SecurityContextHolderFilter@7828ff51, org.springframework.security.web.header.HeaderWriterFilter@44f369d0, org.springframework.web.filter.CorsFilter@7377823b, org.springframework.security.web.authentication.logout.LogoutFilter@37c5fa68, hotelbooking.security.JwtAuthenticationFilter@1adebd45, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29ae49fc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d0e1dc8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a0a20b3, org.springframework.security.web.session.SessionManagementFilter@2324fe14, org.springframework.security.web.access.ExceptionTranslationFilter@4aace9e5, org.springframework.security.web.access.intercept.AuthorizationFilter@35bf563c]
+2026-02-27 23:43:00 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-27 23:43:00 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-02-27 23:43:00 [restartedMain] INFO  h.HotelBookingApplication - Started HotelBookingApplication in 6.935 seconds (process running for 7.247)
+2026-02-27 23:43:05 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-27 23:43:05 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-27 23:43:05 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-02-27 23:43:05 [http-nio-8080-exec-2] INFO  h.controller.AuthController - Registration attempt for email: iliaszahr6@gmail.com
+2026-02-27 23:43:05 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - === REGISTRATION STARTED ===
+2026-02-27 23:43:05 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - Registering user with email: iliaszahr6@gmail.com
+2026-02-27 23:43:05 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - Request data - First Name: ilias, Last Name: ilias, Email: iliaszahr6@gmail.com
+2026-02-27 23:43:05 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - Checking if email exists: iliaszahr6@gmail.com
+2026-02-27 23:43:06 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+2026-02-27 23:43:06 [http-nio-8080-exec-2] DEBUG hotelbooking.service.AuthService - Email exists check for 'iliaszahr6@gmail.com': false
+2026-02-27 23:43:06 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - ✅ Email is available
+2026-02-27 23:43:06 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - Validating password confirmation
+2026-02-27 23:43:06 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - ✅ Passwords match
+2026-02-27 23:43:06 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - Creating User object...
+2026-02-27 23:43:06 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - ✅ User object created
+2026-02-27 23:43:06 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - Saving user to database...
+2026-02-27 23:43:06 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (creation_date, email, email_verification, first_name, last_name, logs, password, phone, role, verification_token, verification_token_expiry) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-02-27 23:43:06 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - ✅ User saved successfully with ID: 1
+2026-02-27 23:43:06 [http-nio-8080-exec-2] INFO  hotelbooking.service.EmailService - 📧 Preparing verification email for: iliaszahr6@gmail.com
+2026-02-27 23:43:06 [http-nio-8080-exec-2] INFO  hotelbooking.service.EmailService - ✅ Verification template loaded successfully
+2026-02-27 23:43:08 [http-nio-8080-exec-2] INFO  hotelbooking.service.EmailService - ✅ Verification email sent to: iliaszahr6@gmail.com
+2026-02-27 23:43:08 [http-nio-8080-exec-2] INFO  hotelbooking.service.EmailService - 🔗 [DEBUG] Verification link for iliaszahr6@gmail.com: http://localhost:5173/verify-email?token=53b6a570-550c-480e-8dd3-e8a6bbfbf7b4
+2026-02-27 23:43:08 [http-nio-8080-exec-2] INFO  hotelbooking.service.EmailService - 🔑 [DEBUG] Verification token: 53b6a570-550c-480e-8dd3-e8a6bbfbf7b4
+2026-02-27 23:43:08 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - Creating response...
+2026-02-27 23:43:08 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - === REGISTRATION COMPLETED SUCCESSFULLY ===
+2026-02-27 23:43:08 [http-nio-8080-exec-2] INFO  hotelbooking.service.AuthService - Response: AuthResponse(token=null, refreshToken=null, tokenType=null, userId=1, email=iliaszahr6@gmail.com, firstName=ilias, lastName=ilias, role=CUSTOMER, emailVerified=false, success=false, message=Registration successful. Please verify your email.)
+2026-02-27 23:43:08 [http-nio-8080-exec-2] INFO  h.controller.AuthController - User registered successfully: iliaszahr6@gmail.com
+2026-02-27 23:43:55 [http-nio-8080-exec-4] INFO  h.controller.AuthController - Login attempt for email: iliaszahr6@gmail.com
+2026-02-27 23:43:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - === LOGIN ATTEMPT ===
+2026-02-27 23:43:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - Login attempt for email: iliaszahr6@gmail.com
+2026-02-27 23:43:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - Looking for user with email: iliaszahr6@gmail.com
+2026-02-27 23:43:55 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid,
+        u1_0.creation_date,
+        u1_0.email,
+        u1_0.email_verification,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.logs,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.verification_token,
+        u1_0.verification_token_expiry 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-02-27 23:43:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - ✅ User found: ilias ilias
+2026-02-27 23:43:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - Verifying password...
+2026-02-27 23:43:55 [http-nio-8080-exec-4] INFO  hotelbooking.service.AuthService - ✅ Password verified successfully
+2026-02-27 23:43:55 [http-nio-8080-exec-4] WARN  hotelbooking.service.AuthService - ⚠️ User email not verified: iliaszahr6@gmail.com
+2026-02-27 23:43:55 [http-nio-8080-exec-4] WARN  h.exception.GlobalExceptionHandler - Bad request: Please verify your email before logging in
+2026-02-27 23:43:55 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [hotelbooking.exception.BadRequestException: Please verify your email before logging in]
+2026-02-27 23:44:00 [http-nio-8080-exec-6] INFO  h.controller.AuthController - Email verification request for token: 53b6a570-550c-480e-8dd3-e8a6bbfbf7b4
+2026-02-27 23:44:00 [http-nio-8080-exec-6] INFO  hotelbooking.service.AuthService - === EMAIL VERIFICATION STARTED ===
+2026-02-27 23:44:00 [http-nio-8080-exec-6] INFO  hotelbooking.service.AuthService - Verifying token: 53b6a570-550c-480e-8dd3-e8a6bbfbf7b4
+2026-02-27 23:44:00 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid,
+        u1_0.creation_date,
+        u1_0.email,
+        u1_0.email_verification,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.logs,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.verification_token,
+        u1_0.verification_token_expiry 
+    from
+        users u1_0 
+    where
+        u1_0.verification_token=?
+2026-02-27 23:44:00 [http-nio-8080-exec-6] INFO  hotelbooking.service.AuthService - ✅ Found user: ilias ilias (iliaszahr6@gmail.com)
+2026-02-27 23:44:00 [http-nio-8080-exec-6] INFO  hotelbooking.service.AuthService - ✅ Email successfully verified for: iliaszahr6@gmail.com
+2026-02-27 23:44:00 [http-nio-8080-exec-6] INFO  hotelbooking.service.AuthService - === EMAIL VERIFICATION COMPLETED ===
+2026-02-27 23:44:00 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    update
+        users 
+    set
+        creation_date=?,
+        email=?,
+        email_verification=?,
+        first_name=?,
+        last_name=?,
+        logs=?,
+        password=?,
+        phone=?,
+        role=?,
+        verification_token=?,
+        verification_token_expiry=? 
+    where
+        uid=?
+2026-02-27 23:44:06 [http-nio-8080-exec-8] INFO  h.controller.AuthController - Email verification request for token: 53b6a570-550c-480e-8dd3-e8a6bbfbf7b4
+2026-02-27 23:44:06 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - === EMAIL VERIFICATION STARTED ===
+2026-02-27 23:44:06 [http-nio-8080-exec-8] INFO  hotelbooking.service.AuthService - Verifying token: 53b6a570-550c-480e-8dd3-e8a6bbfbf7b4
+2026-02-27 23:44:06 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid,
+        u1_0.creation_date,
+        u1_0.email,
+        u1_0.email_verification,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.logs,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.verification_token,
+        u1_0.verification_token_expiry 
+    from
+        users u1_0 
+    where
+        u1_0.verification_token=?
+2026-02-27 23:44:06 [http-nio-8080-exec-8] ERROR hotelbooking.service.AuthService - ❌ Invalid verification token: 53b6a570-550c-480e-8dd3-e8a6bbfbf7b4
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  h.controller.AuthController - Login attempt for email: iliaszahr6@gmail.com
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - === LOGIN ATTEMPT ===
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - Login attempt for email: iliaszahr6@gmail.com
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - Looking for user with email: iliaszahr6@gmail.com
+2026-02-27 23:44:10 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.uid,
+        u1_0.creation_date,
+        u1_0.email,
+        u1_0.email_verification,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.logs,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.verification_token,
+        u1_0.verification_token_expiry 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - ✅ User found: ilias ilias
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - Verifying password...
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - ✅ Password verified successfully
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - ✅ User logs updated
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - Generating JWT token...
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - ✅ JWT token generated
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - Generating refresh token...
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  h.service.RefreshTokenService - Creating refresh token for user: iliaszahr6@gmail.com
+2026-02-27 23:44:10 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tokens 
+    where
+        user_id=?
+2026-02-27 23:44:10 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tokens
+        (created_date, expiry_date, token, user_id) 
+    values
+        (?, ?, ?, ?)
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  h.service.RefreshTokenService - ✅ Refresh token created for user: iliaszahr6@gmail.com
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - ✅ Refresh token generated
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - === LOGIN SUCCESSFUL ===
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  hotelbooking.service.AuthService - Response with token for user: iliaszahr6@gmail.com
+2026-02-27 23:44:10 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    update
+        users 
+    set
+        creation_date=?,
+        email=?,
+        email_verification=?,
+        first_name=?,
+        last_name=?,
+        logs=?,
+        password=?,
+        phone=?,
+        role=?,
+        verification_token=?,
+        verification_token_expiry=? 
+    where
+        uid=?
+2026-02-27 23:44:10 [http-nio-8080-exec-10] INFO  h.controller.AuthController - User logged in successfully: iliaszahr6@gmail.com

@@ -5,6 +5,7 @@ import hotelbooking.dto.request.RegisterRequest;
 import hotelbooking.dto.response.AuthResponse;
 import hotelbooking.entity.User;
 import hotelbooking.entity.enums.Role;
+import hotelbooking.entity.RefreshToken;
 import hotelbooking.exception.BadRequestException;
 import hotelbooking.exception.ResourceNotFoundException;
 import hotelbooking.exception.UnauthorizedException;
@@ -33,6 +34,7 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
     private final EmailService emailService;
+    private final RefreshTokenService refreshTokenService;
 
     public AuthResponse register(RegisterRequest request) {
         log.info("=== REGISTRATION STARTED ===");
@@ -143,11 +145,16 @@ public class AuthService {
         
         // Generate JWT token
         log.info("Generating JWT token...");
-        String token = jwtTokenProvider.generateToken(user.getEmail());
+        String accessToken = jwtTokenProvider.generateToken(user.getEmail());
         log.info("✅ JWT token generated");
 
+        log.info("Generating refresh token...");
+        RefreshToken refreshToken = refreshTokenService.createRefreshToken(user);
+        log.info("✅ Refresh token generated");
+
         AuthResponse response = AuthResponse.builder()
-                .token(token)
+                .token(accessToken)
+                .refreshToken(refreshToken.getToken())
                 .tokenType("Bearer")
                 .message("Login successful")
                 .userId(user.getId())
@@ -236,5 +243,74 @@ public class AuthService {
         log.info("✅ Verification email resent to: {}", user.getEmail());
         log.info("🔑 [DEBUG] New verification token: {}", newVerificationToken);
         log.info("=== RESEND VERIFICATION EMAIL COMPLETED ===");
+    }
+
+    public AuthResponse refreshAccessToken(String refreshTokenString) {
+        log.info("=== REFRESH TOKEN REQUEST ===");
+        
+        try {
+            // Find and verify refresh token
+            RefreshToken refreshToken = refreshTokenService.findByToken(refreshTokenString);
+            refreshTokenService.verifyExpiration(refreshToken);
+            
+            User user = refreshToken.getUser();
+            log.info("Refreshing access token for user: {}", user.getEmail());
+            
+            // Generate new ACCESS token
+            String newAccessToken = jwtTokenProvider.generateToken(user.getEmail());
+            
+            // Generate new refresh token (token rotation)
+            RefreshToken newRefreshToken = refreshTokenService.createRefreshToken(user);
+            
+            // Delete old refresh token
+            refreshTokenService.deleteByUser(user);
+
+            log.info("✅ Access token refreshed successfully for user: {}", user.getEmail());
+
+            // ✅ Create response INSIDE the try block
+            AuthResponse response = AuthResponse.builder()
+                    .token(newAccessToken)
+                    .refreshToken(newRefreshToken.getToken())
+                    .tokenType("Bearer")
+                    .message("Token refreshed successfully")
+                    .userId(user.getId())
+                    .email(user.getEmail())
+                    .firstName(user.getFirstName())
+                    .lastName(user.getLastName())
+                    .role(user.getRole().name())
+                    .emailVerified(user.isEmailVerified())
+                    .build();
+            
+            log.info("✅ Access token refreshed");
+            return response;  // ✅ Return inside try block
+            
+        } catch (BadRequestException e) {
+            if (e.getMessage().equals("REFRESH_TOKEN_EXPIRED")) {
+                log.warn("Refresh token expired - user must login again");
+                
+                try {
+                    String email = jwtTokenProvider.getEmailFromToken(refreshTokenString);
+                    log.info("Expired refresh token belonged to user: {}", email);
+                } catch (Exception ex) {
+                    log.debug("Could not extract email from expired token");
+                }
+                throw new BadRequestException("REFRESH_TOKEN_EXPIRED");
+            }
+            throw e;
+        }
+    }
+
+    public void logout(String email) {
+        log.info("Logging out user: {}", email);
+    
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+        
+        refreshTokenService.deleteByUser(user);
+        
+        user.setLogs(user.getLogs() + "\nLogged out from all devices: " + Instant.now());
+        userRepository.save(user);
+        
+        log.info("✅ User logged out successfully: {}", email);
     }
 }

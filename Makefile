@@ -22,7 +22,6 @@ clean: stop-all
 	cd ./Backend && docker-compose down -v 2>/dev/null || true
 	@echo "Cleanup complete."
 
-up: start-all
 down: stop-all
 
-.PHONY: backend frontend start-all stop-backend stop-all clean
+.PHONY: backend frontend stop-backend stop-all clean

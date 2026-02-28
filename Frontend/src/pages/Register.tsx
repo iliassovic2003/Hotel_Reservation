@@ -3,6 +3,7 @@ import LiquidEther from '../components/animations/LiquidEther';
 import styles from './Register.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { authService, type RegisterRequest, type AuthResponse } from '../services/authService';  // ✅ Fixed imports
 
 const Register = () => {
     const [agreeTerms, setAgreeTerms] = useState(false);
@@ -81,24 +82,18 @@ const Register = () => {
     setLoading(true);
     
     try {
-      const response = await fetch('http://localhost:8080/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fname: fname,
-          lname: lname,
-          email: email,
-          password: password,
-          password2: password2
-        })
-      });
+      const registerData: RegisterRequest = {
+        fname,
+        lname,
+        email,
+        password,
+        password2
+      };
       
-      const data = await response.json();
+      const response = await authService.register(registerData);
+      const data: AuthResponse = await response.json();
       
-      if (!response.ok)
-      {
+      if (!response.ok) {
         if (response.status === 401)
           throw new Error('Invalid Information');
         else if (response.status === 400)
@@ -113,6 +108,10 @@ const Register = () => {
       setShowVerificationMessage(true);
       
     } catch (error) {
+        if (error instanceof Error && error.message === 'SESSION_EXPIRED') {
+          return;
+        }
+        
         console.error('Register error:', error);
         alert(error instanceof Error ? error.message : 'Registration failed. Please try again.');
     } finally {
@@ -123,13 +122,7 @@ const Register = () => {
   const handleResend = async () => {
     setResendStatus('sending');
     try {
-      const response = await fetch('http://localhost:8080/api/auth/resend-verification', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: registeredEmail })
-      });
+      const response = await authService.resendVerification(registeredEmail);
       
       if (response.ok) {
         setResendStatus('sent');
@@ -220,6 +213,7 @@ const Register = () => {
                             className={styles.inputing}
                             value={fname}
                             onChange={(e) => setFname(e.target.value)}
+                            disabled={loading}
                             required
                           />
                         </div>
@@ -229,6 +223,7 @@ const Register = () => {
                               className={styles.inputing}
                               value={lname}
                               onChange={(e) => setLname(e.target.value)}
+                              disabled={loading}
                               required
                             />
                           </div>
@@ -241,6 +236,7 @@ const Register = () => {
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            disabled={loading}
                             required
                           />
                           {emailError && (
@@ -256,6 +252,7 @@ const Register = () => {
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            disabled={loading}
                             required
                             minLength={8}
                           />
@@ -300,6 +297,7 @@ const Register = () => {
                             type="password"
                             value={password2}
                             onChange={(e) => setPassword2(e.target.value)}
+                            disabled={loading}
                             required
                           />
                           
@@ -317,6 +315,7 @@ const Register = () => {
                               className={styles.termsCheckbox}
                               checked={agreeTerms}
                               onChange={(e) => setAgreeTerms(e.target.checked)}
+                              disabled={loading}
                               required
                             />
                             <span className={styles.checkmark}></span>
@@ -327,13 +326,13 @@ const Register = () => {
                         </div>
                       </div>
                       <form onSubmit={handleSubmit} className={styles.form}>
-                        <button
-                          type="submit"
-                          className={styles.button}
-                          disabled={!isFormValid || loading}
-                        >
-                          {loading ? 'Signing Up...' : 'Sign Up'}
-                        </button>
+                      <button
+                        type="submit"
+                        className={`${styles.button} ${(!isFormValid || loading) ? styles.buttonDisabled : ''}`}
+                        disabled={!isFormValid || loading}
+                      >
+                        {loading ? 'Signing Up...' : 'Sign Up'}
+                      </button>
                       </form>
                       <div className={styles.change}>already with us ? <Link to="/login">log in</Link></div>
                     </>

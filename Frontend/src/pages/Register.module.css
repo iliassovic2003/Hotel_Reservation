@@ -335,9 +335,8 @@
   justify-content: center;
   max-width: 500px;
   margin: 100px 50px;
-  background: linear-gradient(135deg, 
-    rgba(92, 0, 0, 0.15) 0%, 
-    rgba(107, 0, 0, 0.1) 100%);
+  background: rgba(255, 253, 248, 1);
+  background-color: rgb(43, 16, 16);
   backdrop-filter: blur(20px);
   -webkit-background-clip: padding-box;
   background-clip: padding-box;

@@ -1,8 +1,9 @@
 import '../styles/global.css';
 import LiquidEther from '../components/animations/LiquidEther';
 import styles from './Login.module.css';
-import { Link, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { authService, type AuthResponse } from '../services/authService';
 
 const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
@@ -11,7 +12,60 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [sessionMessage, setSessionMessage] = useState('');
+  const [messageType, setMessageType] = useState('expired');
+  const [isMessageVisible, setIsMessageVisible] = useState(true);
+  
+  const messageTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const messageRef = useRef<HTMLDivElement>(null);
+
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const reason = params.get('reason');
+    
+    if (reason) {
+      let message = '';
+      let type = 'default';
+
+      switch(reason) {
+        case 'REFRESH_TOKEN_EXPIRED':
+          message = 'Your session has expired. Please login again.';
+          type = 'expired';
+          break;
+        case 'REFRESH_TOKEN_INVALID':
+          message = 'Please login to continue.';
+          type = 'invalid';
+          break;
+        default:
+          message = decodeURIComponent(reason);
+          type = 'default';
+      }
+
+      setSessionMessage(message);
+      setMessageType(type);
+      setIsMessageVisible(true);
+      
+      messageTimeout.current = setTimeout(() => {
+        if (messageRef.current) {
+          messageRef.current.classList.add(styles.messageHide);
+          setTimeout(() => {
+            setIsMessageVisible(false);
+            messageRef.current?.classList.remove(styles.messageHide);
+          }, 280);
+        }
+      }, 10000);
+      
+      window.history.replaceState({}, document.title, '/login');
+    }
+    
+    return () => {
+      if (messageTimeout.current)
+        clearTimeout(messageTimeout.current);
+    };
+  }, [location]);
 
   const validateEmail = (email: string): string => {
     if (!email)
@@ -59,19 +113,8 @@ const Login = () => {
     setLoading(true);
     
     try {
-      const response = await fetch('http://localhost:8080/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password
-          // place for remember me
-        })
-      });
-      
-      const data = await response.json();
+      const response = await authService.login(email, password);
+      const data: AuthResponse = await response.json();
       
       if (!response.ok)
       {
@@ -86,16 +129,20 @@ const Login = () => {
       console.log('Login successful:', data);
       
       if (data.token) {
-          const storage = rememberMe ? localStorage : sessionStorage;
-          storage.setItem('token', data.token);
-          storage.setItem('user', JSON.stringify({
-            userId: data.userId,
-            email: data.email,
-            firstName: data.firstName,
-            lastName: data.lastName,
-            role: data.role
-          }));
-        }
+        const storage = rememberMe ? localStorage : sessionStorage;
+        storage.setItem('accesstoken', data.token);
+
+        if (data.refreshToken)
+          storage.setItem('refreshToken', data.refreshToken);
+        
+        storage.setItem('user', JSON.stringify({
+          userId: data.userId,
+          email: data.email,
+          firstName: data.firstName,
+          lastName: data.lastName,
+          role: data.role
+        }));
+      }
       alert('Login successful!');
       
       if (data.role === 'ADMIN')
@@ -111,14 +158,56 @@ const Login = () => {
     }
   };
 
+  const getMessageIcon = () => {
+    switch(messageType) {
+      case 'expired':
+        return (
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>
+          </svg>
+        );
+      case 'invalid':
+        return (
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+          </svg>
+        );
+      default:
+        return (
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+          </svg>
+        );
+    }
+  };
+
   return (
     <>
       <main>
+        
+      {isMessageVisible && sessionMessage && (
+          <div 
+            ref={messageRef}
+            className={`${styles.sessionMessage} ${styles[`message${messageType.charAt(0).toUpperCase() + messageType.slice(1)}`]}`}
+          >
+            <div className={styles.messageContent}>
+              <div className={styles.messageIcon}>
+                {getMessageIcon()}
+              </div>
+              <div className={styles.messageText}>
+                {sessionMessage}
+              </div>
+            </div>
+            <div className={styles.messageProgress} />
+          </div>
+        )}
+
         <div className={styles.login}>
           <Link to="/" className={styles.backButton}>
             <img src="./src/assets/icons/left-arrow.svg" className={styles.backIcon} />
             <span className={styles.backText}>Back to Home</span>
           </Link>
+          
           <div className={styles.liquidBackground}>
             <LiquidEther
               colors={['#D4AF37', '#B8860B', '#8B0000', '#FFD700']}
@@ -196,6 +285,7 @@ const Login = () => {
                   className={`${styles.inputing} ${emailError ? styles.inputError : ''}`}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  disabled={loading}
                   required
                 />
                 {emailError && (
@@ -211,6 +301,7 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   value={password}
                   minLength={8}
+                  disabled={loading}
                   required
                 />
                 {passwordError && (
